@@ -48,6 +48,7 @@ public class DatabaseHelperUser extends SQLiteOpenHelper {
         @Override
         public void onCreate(SQLiteDatabase db) {
             db.execSQL(CREATE_USER_TABLE);
+            db.execSQL("insert into usuarios values(01,'admin','mauri@mail.com','electiva1_2019')");
         }
 
 
