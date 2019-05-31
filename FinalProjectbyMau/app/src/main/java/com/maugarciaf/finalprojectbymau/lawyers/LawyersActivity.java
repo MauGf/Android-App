@@ -10,6 +10,7 @@ import android.view.View;
 import com.maugarciaf.finalprojectbymau.R;
 
 public class LawyersActivity extends AppCompatActivity {
+    public static final String EXTRA_LAWYER_ID ="extra_lawyer_id";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +19,16 @@ public class LawyersActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById (R.id.toolbar);
         setSupportActionBar (toolbar);
 
-        FloatingActionButton fab = findViewById (R.id.fab);
-        fab.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make (view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction ("Action", null).show ();
-            }
-        });
+        LawyersFragment fragment = (LawyersFragment)
+                getSupportFragmentManager().findFragmentById(R.id.lawyers_container);
+
+        if (fragment == null) {
+            fragment = LawyersFragment.newInstance();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.lawyers_container, fragment)
+                    .commit();
+        }
     }
 
 }

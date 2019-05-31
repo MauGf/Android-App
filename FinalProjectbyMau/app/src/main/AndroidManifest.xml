@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".lawyers.LawyersActivity"
-            android:label="@string/title_activity_lawyers"
+            android:name=".lawyerdetail.LawyerDetailActivity"
+            android:label="@string/title_activity_lawyer_detail"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".lawyers.LawyersActivity"
+            android:label="@string/activity_listado"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".UsersListActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

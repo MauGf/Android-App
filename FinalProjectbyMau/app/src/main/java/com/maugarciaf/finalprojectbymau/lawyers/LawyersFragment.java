@@ -1,5 +1,24 @@
 package com.maugarciaf.finalprojectbymau.lawyers;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.maugarciaf.finalprojectbymau.R;
+import com.maugarciaf.finalprojectbymau.data.LawyersContract;
+import com.maugarciaf.finalprojectbymau.data.LawyersDbHelper;
+import com.maugarciaf.finalprojectbymau.lawyerdetail.LawyerDetailActivity;
+
 public class LawyersFragment extends Fragment {
     public static final int REQUEST_UPDATE_DELETE_LAWYER = 2;
 
@@ -37,7 +56,7 @@ public class LawyersFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Cursor currentItem = (Cursor) mLawyersAdapter.getItem(i);
                 String currentLawyerId = currentItem.getString(
-                        currentItem.getColumnIndex(LawyerEntry.ID));
+                        currentItem.getColumnIndex(LawyersContract.LawyerEntry.ID));
 
                 showDetailScreen(currentLawyerId);
             }
