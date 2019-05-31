@@ -27,5 +27,6 @@
     <string name="error_email_exists">Email Already Exists</string>
     <string name="error_password_match">Password Does Not Matches</string>
     <string name="error_valid_email_password">Wrong Email or Password</string>
+    <string name="title_activity_lawyers">LawyersActivity</string>
 
 </resources>
