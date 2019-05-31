@@ -11,6 +11,7 @@
     <string name="login">Login</string>
     <string name="desarrollador">Desarrollador: Mauricio Alcides Garcia\nCarnet: 2906662015</string>
     <string name="hint_usuario">Usuario</string>
+    <string name="hint_mail">Email</string>
     <string name="hint_contrasena">Contraseña</string>
     <string name="boton_ingresar">INGRESAR</string>
     <string name="error_login">ERROR...</string>
