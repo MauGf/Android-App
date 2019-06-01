@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.maugarciaf.finalprojectbymau.R;
+import com.maugarciaf.finalprojectbymau.addeditlawyer.AddEditLawyerActivity;
 import com.maugarciaf.finalprojectbymau.data.LawyersContract;
 import com.maugarciaf.finalprojectbymau.data.LawyersDbHelper;
 import com.maugarciaf.finalprojectbymau.lawyerdetail.LawyerDetailActivity;
