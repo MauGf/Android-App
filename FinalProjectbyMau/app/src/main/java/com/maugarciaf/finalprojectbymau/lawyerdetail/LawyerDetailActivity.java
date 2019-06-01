@@ -12,6 +12,7 @@ import android.view.View;
 
 import com.maugarciaf.finalprojectbymau.R;
 import com.maugarciaf.finalprojectbymau.lawyers.LawyersActivity;
+import com.maugarciaf.finalprojectbymau.utils.Tools;
 
 import java.util.Objects;
 
@@ -25,6 +26,8 @@ public class LawyerDetailActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById (R.id.toolbar);
         setSupportActionBar (toolbar);
         Objects.requireNonNull (getSupportActionBar ()).setDisplayHomeAsUpEnabled(true);
+
+        Tools.setSystemBarTransparent (this);
 
         String id = getIntent().getStringExtra(LawyersActivity.EXTRA_LAWYER_ID);
 
