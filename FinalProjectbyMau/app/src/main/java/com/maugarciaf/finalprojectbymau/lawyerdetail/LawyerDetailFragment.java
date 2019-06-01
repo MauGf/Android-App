@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.maugarciaf.finalprojectbymau.R;
+import com.maugarciaf.finalprojectbymau.addeditlawyer.AddEditLawyerActivity;
 import com.maugarciaf.finalprojectbymau.data.Lawyer;
 import com.maugarciaf.finalprojectbymau.data.LawyersDbHelper;
 import com.maugarciaf.finalprojectbymau.lawyers.LawyersActivity;
@@ -64,11 +66,12 @@ public class LawyerDetailFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_lawyer_detail, container, false);
-        mCollapsingView = (CollapsingToolbarLayout) getActivity().findViewById(R.id.toolbar_layout);
+        mCollapsingView = (CollapsingToolbarLayout) Objects.requireNonNull (getActivity ()).findViewById(R.id.toolbar_layout);
         mAvatar = (ImageView) getActivity().findViewById(R.id.iv_avatar);
         mPhoneNumber = (TextView) root.findViewById(R.id.tv_phone_number);
         mSpecialty = (TextView) root.findViewById(R.id.tv_specialty);
