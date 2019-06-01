@@ -21,7 +21,6 @@
             android:name=".lawyers.LawyersActivity"
             android:label="@string/activity_listado"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".UsersListActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
