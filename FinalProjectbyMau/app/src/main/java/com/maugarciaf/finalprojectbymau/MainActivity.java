@@ -19,48 +19,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private NestedScrollView nestedScrollView;
 
-    private TextInputLayout textInputLayoutEmail;
+    private TextInputLayout textInputLayoutName;
     private TextInputLayout textInputLayoutPassword;
 
-    private TextInputEditText textInputEditTextEmail;
+    private TextInputEditText textInputEditTextName;
     private TextInputEditText textInputEditTextPassword;
 
     private AppCompatButton appCompatButtonLogin;
-    private AppCompatButton btnSalir;
 
-    //private AppCompatTextView textViewLinkRegister;
 
     private InputValidation inputValidation;
     private DatabaseHelperUser databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        getSupportActionBar().hide();
+        super.onCreate (savedInstanceState);
+        setContentView (R.layout.activity_login);
+        getSupportActionBar ().hide ();
 
-        initViews();
-        initListeners();
-        initObjects();
+        initViews ();
+        initListeners ();
+        initObjects ();
     }
 
-    /**
-     * This method is to initialize views
-     */
+
     private void initViews() {
 
-        nestedScrollView = (NestedScrollView) findViewById(R.id.nestedScrollView);
+        nestedScrollView = (NestedScrollView) findViewById (R.id.nestedScrollView);
 
-        textInputLayoutEmail = (TextInputLayout) findViewById(R.id.textInputLayoutEmail);
-        textInputLayoutPassword = (TextInputLayout) findViewById(R.id.textInputLayoutPassword);
+        textInputLayoutName = (TextInputLayout) findViewById (R.id.textInputLayoutName);
+        textInputLayoutPassword = (TextInputLayout) findViewById (R.id.textInputLayoutPassword);
 
-        textInputEditTextEmail = (TextInputEditText) findViewById(R.id.textInputEditTextEmail);
-        textInputEditTextPassword = (TextInputEditText) findViewById(R.id.textInputEditTextPassword);
+        textInputEditTextName = (TextInputEditText) findViewById (R.id.textInputEditTextName);
+        textInputEditTextPassword = (TextInputEditText) findViewById (R.id.textInputEditTextPassword);
 
-        appCompatButtonLogin = (AppCompatButton) findViewById(R.id.appCompatButtonLogin);
-        btnSalir = (AppCompatButton) findViewById (R.id.button_salir);
-
-        //textViewLinkRegister = (AppCompatTextView) findViewById(R.id.textViewLinkRegister);
+        appCompatButtonLogin = (AppCompatButton) findViewById (R.id.appCompatButtonLogin);
+        AppCompatButton btnSalir = (AppCompatButton) findViewById (R.id.button_salir);
 
         btnSalir.setOnClickListener (new View.OnClickListener () {
             @Override
@@ -71,77 +65,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    /**
-     * This method is to initialize listeners
-     */
     private void initListeners() {
-        appCompatButtonLogin.setOnClickListener(this);
-        //textViewLinkRegister.setOnClickListener(this);
+        appCompatButtonLogin.setOnClickListener (this);
+
     }
 
-    /**
-     * This method is to initialize objects to be used
-     */
     private void initObjects() {
-        databaseHelper = new DatabaseHelperUser(activity);
-        inputValidation = new InputValidation(activity);
+        databaseHelper = new DatabaseHelperUser (activity);
+        inputValidation = new InputValidation (activity);
 
     }
 
-    /**
-     * This implemented method is to listen the click on view
-     *
-     * @param v
-     */
+
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
+        switch (v.getId ()) {
             case R.id.appCompatButtonLogin:
-                verifyFromSQLite();
+                verifyFromSQLite ();
                 break;
-            /*case R.id.textViewLinkRegister:
-                // Navigate to RegisterActivity
-                Intent intentRegister = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(intentRegister);
-                break;*/
         }
     }
 
-    /**
-     * This method is to validate the input text fields and verify login credentials from SQLite
-     */
     private void verifyFromSQLite() {
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextEmail, textInputLayoutEmail, getString(R.string.error_message_email))) {
+        if (!inputValidation.isInputEditTextFilled (textInputEditTextName, textInputLayoutName, getString (R.string.error_message_email))) {
             return;
         }
-        if (!inputValidation.isInputEditTextEmail(textInputEditTextEmail, textInputLayoutEmail, getString(R.string.error_message_email))) {
-            return;
-        }
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextPassword, textInputLayoutPassword, getString(R.string.error_message_password))) {
+        if (!inputValidation.isInputEditTextFilled (textInputEditTextPassword, textInputLayoutPassword, getString (R.string.error_message_password))) {
             return;
         }
 
-        if (databaseHelper.checkUser(textInputEditTextEmail.getText().toString().trim()
-                , textInputEditTextPassword.getText().toString().trim())) {
+        if (databaseHelper.checkUser (textInputEditTextName.getText ().toString ().trim ()
+                , textInputEditTextPassword.getText ().toString ().trim ())) {
 
 
-            Intent accountsIntent = new Intent(activity, LawyersActivity.class);
-            accountsIntent.putExtra("EMAIL", textInputEditTextEmail.getText().toString().trim());
-            emptyInputEditText();
-            startActivity(accountsIntent);
+            Intent accountsIntent = new Intent (activity, LawyersActivity.class);
+            accountsIntent.putExtra ("EMAIL", textInputEditTextName.getText ().toString ().trim ());
+            emptyInputEditText ();
+            startActivity (accountsIntent);
 
 
         } else {
             // Snack Bar to show success message that record is wrong
-            Snackbar.make(nestedScrollView, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show();
+            Snackbar.make (nestedScrollView, getString (R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show ();
         }
     }
 
-    /**
-     * This method is to empty all input edit text
-     */
     private void emptyInputEditText() {
-        textInputEditTextEmail.setText(null);
-        textInputEditTextPassword.setText(null);
+        textInputEditTextName.setText (null);
+        textInputEditTextPassword.setText (null);
     }
 }
