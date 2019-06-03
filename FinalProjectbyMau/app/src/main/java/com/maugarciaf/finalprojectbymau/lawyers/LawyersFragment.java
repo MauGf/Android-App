@@ -90,6 +90,7 @@ public class LawyersFragment extends Fragment {
                     loadLawyers();
                     break;
                 case REQUEST_UPDATE_DELETE_LAWYER:
+                    Toast.makeText (getActivity (), "Se actualizo la Bd.", Toast.LENGTH_SHORT).show ();
                     loadLawyers();
                     break;
             }
