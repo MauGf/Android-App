@@ -42,85 +42,85 @@ public class AddEditLawyerFragment extends Fragment {
     }
 
     public static AddEditLawyerFragment newInstance(String lawyerId) {
-        AddEditLawyerFragment fragment = new AddEditLawyerFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_LAWYER_ID, lawyerId);
-        fragment.setArguments(args);
+        AddEditLawyerFragment fragment = new AddEditLawyerFragment ();
+        Bundle args = new Bundle ();
+        args.putString (ARG_LAWYER_ID, lawyerId);
+        fragment.setArguments (args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mLawyerId = getArguments().getString(ARG_LAWYER_ID);
+        super.onCreate (savedInstanceState);
+        if (getArguments () != null) {
+            mLawyerId = getArguments ().getString (ARG_LAWYER_ID);
         }
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_add_edit_lawyer, container, false);
+        View root = inflater.inflate (R.layout.fragment_add_edit_lawyer, container, false);
 
         // Referencias UI
-        mSaveButton = (FloatingActionButton) getActivity().findViewById(R.id.fab);
-        mNameField = (TextInputEditText) root.findViewById(R.id.et_name);
-        mPhoneNumberField = (TextInputEditText) root.findViewById(R.id.et_phone_number);
-        mSpecialtyField = (TextInputEditText) root.findViewById(R.id.et_specialty);
-        mBioField = (TextInputEditText) root.findViewById(R.id.et_bio);
-        mNameLabel = (TextInputLayout) root.findViewById(R.id.til_name);
-        mPhoneNumberLabel = (TextInputLayout) root.findViewById(R.id.til_phone_number);
-        mSpecialtyLabel = (TextInputLayout) root.findViewById(R.id.til_specialty);
-        mBioLabel = (TextInputLayout) root.findViewById(R.id.til_bio);
+        mSaveButton = (FloatingActionButton) getActivity ().findViewById (R.id.fab);
+        mNameField = (TextInputEditText) root.findViewById (R.id.et_name);
+        mPhoneNumberField = (TextInputEditText) root.findViewById (R.id.et_phone_number);
+        mSpecialtyField = (TextInputEditText) root.findViewById (R.id.et_specialty);
+        mBioField = (TextInputEditText) root.findViewById (R.id.et_bio);
+        mNameLabel = (TextInputLayout) root.findViewById (R.id.til_name);
+        mPhoneNumberLabel = (TextInputLayout) root.findViewById (R.id.til_phone_number);
+        mSpecialtyLabel = (TextInputLayout) root.findViewById (R.id.til_specialty);
+        mBioLabel = (TextInputLayout) root.findViewById (R.id.til_bio);
 
         // Eventos
-        mSaveButton.setOnClickListener(new View.OnClickListener() {
+        mSaveButton.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                addEditLawyer();
+                addEditLawyer ();
             }
         });
 
-        mLawyersDbHelper = new LawyersDbHelper(getActivity());
+        mLawyersDbHelper = new LawyersDbHelper (getActivity ());
 
         // Carga de datos
         if (mLawyerId != null) {
-            loadLawyer();
+            loadLawyer ();
         }
 
         return root;
     }
 
     private void loadLawyer() {
-        new GetLawyerByIdTask().execute();
+        new GetLawyerByIdTask ().execute ();
     }
 
     private void addEditLawyer() {
         boolean error = false;
 
-        String name = mNameField.getText().toString();
-        String phoneNumber = mPhoneNumberField.getText().toString();
-        String specialty = mSpecialtyField.getText().toString();
-        String bio = mBioField.getText().toString();
+        String name = mNameField.getText ().toString ();
+        String phoneNumber = mPhoneNumberField.getText ().toString ();
+        String specialty = mSpecialtyField.getText ().toString ();
+        String bio = mBioField.getText ().toString ();
 
-        if (TextUtils.isEmpty(name)) {
-            mNameLabel.setError(getString(R.string.field_error));
+        if (TextUtils.isEmpty (name)) {
+            mNameLabel.setError (getString (R.string.field_error));
             error = true;
         }
 
-        if (TextUtils.isEmpty(phoneNumber)) {
-            mPhoneNumberLabel.setError(getString(R.string.field_error));
+        if (TextUtils.isEmpty (phoneNumber)) {
+            mPhoneNumberLabel.setError (getString (R.string.field_error));
             error = true;
         }
 
-        if (TextUtils.isEmpty(specialty)) {
-            mSpecialtyLabel.setError(getString(R.string.field_error));
+        if (TextUtils.isEmpty (specialty)) {
+            mSpecialtyLabel.setError (getString (R.string.field_error));
             error = true;
         }
 
 
-        if (TextUtils.isEmpty(bio)) {
-            mBioLabel.setError(getString(R.string.field_error));
+        if (TextUtils.isEmpty (bio)) {
+            mBioLabel.setError (getString (R.string.field_error));
             error = true;
         }
 
@@ -128,58 +128,57 @@ public class AddEditLawyerFragment extends Fragment {
             return;
         }
 
-        Lawyer lawyer = new Lawyer(name, specialty, phoneNumber, bio, mAvatarUri);
+        Lawyer lawyer = new Lawyer (name, specialty, phoneNumber, bio, mAvatarUri);
 
 
-
-        new AddEditLawyerTask().execute(lawyer);
+        new AddEditLawyerTask ().execute (lawyer);
 
     }
 
     private void showLawyersScreen(Boolean requery) {
         if (!requery) {
-            showAddEditError();
-            getActivity().setResult(Activity.RESULT_CANCELED);
+            showAddEditError ();
+            getActivity ().setResult (Activity.RESULT_CANCELED);
         } else {
-            getActivity().setResult(Activity.RESULT_OK);
+            getActivity ().setResult (Activity.RESULT_OK);
         }
 
-        getActivity().finish();
+        getActivity ().finish ();
     }
 
     private void showAddEditError() {
-        Toast.makeText(getActivity(),
-                "Error al agregar nueva información", Toast.LENGTH_SHORT).show();
+        Toast.makeText (getActivity (),
+                "Error al agregar nueva información", Toast.LENGTH_SHORT).show ();
     }
 
     private void showLawyer(Lawyer lawyer) {
-        mNameField.setText(lawyer.getName());
-        mPhoneNumberField.setText(lawyer.getPhoneNumber());
-        mSpecialtyField.setText(lawyer.getSpecialty());
-        mBioField.setText(lawyer.getBio());
-        mAvatarUri = lawyer.getAvatarUri();
+        mNameField.setText (lawyer.getName ());
+        mPhoneNumberField.setText (lawyer.getPhoneNumber ());
+        mSpecialtyField.setText (lawyer.getSpecialty ());
+        mBioField.setText (lawyer.getBio ());
+        mAvatarUri = lawyer.getAvatarUri ();
     }
 
     private void showLoadError() {
-        Toast.makeText(getActivity(),
-                "Error al editar abogado", Toast.LENGTH_SHORT).show();
+        Toast.makeText (getActivity (),
+                "Error al editar abogado", Toast.LENGTH_SHORT).show ();
     }
 
     private class GetLawyerByIdTask extends AsyncTask<Void, Void, Cursor> {
 
         @Override
         protected Cursor doInBackground(Void... voids) {
-            return mLawyersDbHelper.getLawyerById(mLawyerId);
+            return mLawyersDbHelper.getLawyerById (mLawyerId);
         }
 
         @Override
         protected void onPostExecute(Cursor cursor) {
-            if (cursor != null && cursor.moveToLast()) {
-                showLawyer(new Lawyer(cursor));
+            if (cursor != null && cursor.moveToLast ()) {
+                showLawyer (new Lawyer (cursor));
             } else {
-                showLoadError();
-                getActivity().setResult(Activity.RESULT_CANCELED);
-                getActivity().finish();
+                showLoadError ();
+                getActivity ().setResult (Activity.RESULT_CANCELED);
+                getActivity ().finish ();
             }
         }
 
@@ -190,17 +189,16 @@ public class AddEditLawyerFragment extends Fragment {
         @Override
         protected Boolean doInBackground(Lawyer... lawyers) {
             if (mLawyerId != null) {
-                return mLawyersDbHelper.updateLawyer(lawyers[0], mLawyerId) > 0;
-
+                return mLawyersDbHelper.updateLawyer (lawyers[0], mLawyerId) > 0;
             } else {
-                return mLawyersDbHelper.saveLawyer(lawyers[0]) > 0;
+                return mLawyersDbHelper.saveLawyer (lawyers[0]) > 0;
             }
 
         }
 
         @Override
         protected void onPostExecute(Boolean result) {
-            showLawyersScreen(result);
+            showLawyersScreen (result);
         }
 
     }
