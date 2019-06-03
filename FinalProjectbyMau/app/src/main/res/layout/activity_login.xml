@@ -23,14 +23,15 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-
-            <android.support.v7.widget.AppCompatImageView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/avatarmauri" />
-
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="@string/login"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/grey_60"
+                android:textStyle="bold" />
 
             <RelativeLayout
                 android:id="@+id/email_login_form"
@@ -102,15 +103,6 @@
                         android:layout_height="20dp" />
 
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="16dp"
-                        android:text="@string/desarrollador"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/grey_60"
-                        android:textSize="12sp" />
                 </LinearLayout>
 
             </RelativeLayout>

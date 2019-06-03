@@ -1,5 +1,7 @@
 package com.maugarciaf.finalprojectbymau;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -8,8 +10,11 @@ import android.widget.Toast;
 
 import com.maugarciaf.finalprojectbymau.utils.Tools;
 
+import java.util.Objects;
+
 public class AboutActivity extends AppCompatActivity {
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
@@ -18,12 +23,13 @@ public class AboutActivity extends AppCompatActivity {
         initToolbar ();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Acerca de");
+        Objects.requireNonNull (getSupportActionBar ()).setTitle("Acerca de");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Tools.setSystemBarTransparent (this);
+        //Tools.setSystemBarTransparent (this);
     }
 
 

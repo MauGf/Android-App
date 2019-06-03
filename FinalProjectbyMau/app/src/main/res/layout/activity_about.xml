@@ -25,21 +25,25 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        <ScrollView
+            android:id="@+id/about_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:layout_margin="@dimen/spacing_xlarge"
-            android:paddingBottom="?attr/actionBarSize"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="?attr/actionBarSize">
 
             <android.support.v7.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:layout_gravity="start"
                 android:layout_marginTop="20dp"
                 android:src="@mipmap/ic_launcher_round" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -49,10 +53,10 @@
                 app:fontFamily="sans-serif-light" />
 
             <View
-                android:layout_width="250dp"
+                android:layout_width="235dp"
                 android:layout_height="3dp"
-                android:layout_marginBottom="@dimen/spacing_medium"
                 android:layout_marginTop="@dimen/spacing_medium"
+                android:layout_marginBottom="@dimen/spacing_medium"
                 android:background="@color/colorPrimary" />
 
             <View
@@ -116,9 +120,6 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/grey_40" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="@dimen/spacing_mxlarge" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -126,15 +127,19 @@
                 android:text="@string/desarrollador"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/grey_90" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/spacing_large" />
+
             <android.support.v7.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginTop="20dp"
+                android:layout_gravity="start"
+                android:layout_marginTop="7dp"
                 android:src="@drawable/avatarmauri" />
 
         </LinearLayout>
-
+        </ScrollView>
     </RelativeLayout>
 
 </LinearLayout>
