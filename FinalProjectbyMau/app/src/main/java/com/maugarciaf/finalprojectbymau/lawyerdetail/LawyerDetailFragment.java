@@ -22,7 +22,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.maugarciaf.finalprojectbymau.R;
 import com.maugarciaf.finalprojectbymau.addeditlawyer.AddEditLawyerActivity;
-import com.maugarciaf.finalprojectbymau.data.Lawyer;
+import com.maugarciaf.finalprojectbymau.model.Lawyer;
 import com.maugarciaf.finalprojectbymau.data.LawyersDbHelper;
 import com.maugarciaf.finalprojectbymau.lawyers.LawyersActivity;
 import com.maugarciaf.finalprojectbymau.lawyers.LawyersFragment;
