@@ -96,6 +96,8 @@ public class LawyerDetailFragment extends Fragment {
                 break;
             case R.id.action_delete:
                 new DeleteLawyerTask().execute();
+                Toast.makeText(getActivity(),
+                        "Se borro un abogado", Toast.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -169,6 +171,7 @@ public class LawyerDetailFragment extends Fragment {
 
         @Override
         protected Integer doInBackground(Void... voids) {
+
             return mLawyersDbHelper.deleteLawyer(mLawyerId);
         }
 
