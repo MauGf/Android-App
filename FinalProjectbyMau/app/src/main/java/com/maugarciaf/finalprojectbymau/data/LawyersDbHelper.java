@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.maugarciaf.finalprojectbymau.model.Lawyer;
+
 public class LawyersDbHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "Lawyers.db";
@@ -33,7 +35,7 @@ public class LawyersDbHelper extends SQLiteOpenHelper {
     }
 
     private void mockData(SQLiteDatabase sqLiteDatabase) {
-        mockLawyer(sqLiteDatabase, new Lawyer("Carlos Perez", "Abogado penalista",
+        mockLawyer(sqLiteDatabase, new Lawyer ("Carlos Perez", "Abogado penalista",
                 "300 200 1111", "Gran profesional con experiencia de 5 años en casos penales.",
                 "carlos_perez.jpg"));
         mockLawyer(sqLiteDatabase, new Lawyer("Daniel Samper", "Abogado accidentes de tráfico",
