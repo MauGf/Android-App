@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.maugarciaf.finalprojectbymau.R;
-import com.maugarciaf.finalprojectbymau.data.Lawyer;
+import com.maugarciaf.finalprojectbymau.model.Lawyer;
 import com.maugarciaf.finalprojectbymau.data.LawyersDbHelper;
 
 public class AddEditLawyerFragment extends Fragment {
