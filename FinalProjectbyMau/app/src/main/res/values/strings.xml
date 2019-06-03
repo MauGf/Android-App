@@ -126,5 +126,8 @@
     <string name="field_error">Ingresa un valor</string>
     <string name="action_delete">Eliminar</string>
     <string name="title_activity_add_edit_lawyer">AddEditLawyerActivity</string>
+    <string name="tel_fono">Teléfono</string>
+    <string name="especialidad">Especialidad</string>
+    <string name="biografa">Biografía</string>
 
 </resources>
