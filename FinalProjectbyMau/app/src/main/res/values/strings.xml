@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Final Project by Mau</string>
+    <string name="app_name">Doctor List App</string>
 
     <string name="action_settings">Configuraciones</string>
     <string name="ingresar_usuario">Ingrese su Usuario</string>
@@ -9,7 +9,7 @@
     <string name="usuario">ELE1</string>
     <string name="password">SECC01</string>
     <string name="login">Login</string>
-    <string name="desarrollador">Desarrollador: Mauricio Alcides Garcia\nCarnet: 2906662015</string>
+    <string name="desarrollador">Mauricio Alcides Garcia\nCarnet: 2906662015</string>
     <string name="hint_usuario">Usuario</string>
     <string name="hint_mail">Email</string>
     <string name="hint_contrasena">Contraseña</string>
@@ -129,5 +129,11 @@
     <string name="tel_fono">Teléfono</string>
     <string name="especialidad">Especialidad</string>
     <string name="biografa">Biografía</string>
+    <string name="desarrollador_title">Desarrollador:</string>
+    <string name="last_update">Junio 2019</string>
+    <string name="update_tiltle">Last Update</string>
+    <string name="version_">1.0</string>
+    <string name="version_title">Version</string>
+    <string name="acerca_de">Acerca de</string>
 
 </resources>
