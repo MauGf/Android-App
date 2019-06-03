@@ -35,29 +35,45 @@ public class LawyersDbHelper extends SQLiteOpenHelper {
     }
 
     private void mockData(SQLiteDatabase sqLiteDatabase) {
-        mockLawyer(sqLiteDatabase, new Lawyer ("Carlos Perez", "Abogado penalista",
-                "300 200 1111", "Gran profesional con experiencia de 5 años en casos penales.",
+        mockLawyer(sqLiteDatabase, new Lawyer ("Carlos Perez",
+                "Abogado penalista",
+                "300 200 1111",
+                "Gran profesional con experiencia de 5 años en casos penales.",
                 "carlos_perez.jpg"));
-        mockLawyer(sqLiteDatabase, new Lawyer("Daniel Samper", "Abogado accidentes de tráfico",
-                "300 200 2222", "Gran profesional con experiencia de 5 años en accidentes de tráfico.",
+        mockLawyer(sqLiteDatabase, new Lawyer("Daniel Samper",
+                "Abogado accidentes de tráfico",
+                "300 200 2222",
+                "Gran profesional con experiencia de 5 años en accidentes de tráfico.",
                 "daniel_samper.jpg"));
-        mockLawyer(sqLiteDatabase, new Lawyer("Lucia Aristizabal", "Abogado de derechos laborales",
-                "300 200 3333", "Gran profesional con más de 3 años de experiencia en defensa de los trabajadores.",
+        mockLawyer(sqLiteDatabase, new Lawyer("Lucia Aristizabal",
+                "Abogado de derechos laborales",
+                "300 200 3333",
+                "Gran profesional con más de 3 años de experiencia en defensa de los trabajadores.",
                 "lucia_aristizabal.jpg"));
-        mockLawyer(sqLiteDatabase, new Lawyer("Marina Acosta", "Abogado de familia",
-                "300 200 4444", "Gran profesional con experiencia de 5 años en casos de familia.",
+        mockLawyer(sqLiteDatabase, new Lawyer("Marina Acosta",
+                "Abogado de familia",
+                "300 200 4444",
+                "Gran profesional con experiencia de 5 años en casos de familia.",
                 "marina_acosta.jpg"));
-        mockLawyer(sqLiteDatabase, new Lawyer("Olga Ortiz", "Abogado de administración pública",
-                "300 200 5555", "Gran profesional con experiencia de 5 años en casos en expedientes de urbanismo.",
+        mockLawyer(sqLiteDatabase, new Lawyer("Olga Ortiz",
+                "Abogado de administración pública",
+                "300 200 5555",
+                "Gran profesional con experiencia de 5 años en casos en expedientes de urbanismo.",
                 "olga_ortiz.jpg"));
-        mockLawyer(sqLiteDatabase, new Lawyer("Pamela Briger", "Abogado fiscalista",
-                "300 200 6666", "Gran profesional con experiencia de 5 años en casos de derecho financiero",
+        mockLawyer(sqLiteDatabase, new Lawyer("Pamela Briger",
+                "Abogado fiscalista",
+                "300 200 6666",
+                "Gran profesional con experiencia de 5 años en casos de derecho financiero",
                 "pamela_briger.jpg"));
-        mockLawyer(sqLiteDatabase, new Lawyer("Rodrigo Benavidez", "Abogado Mercantilista",
-                "300 200 1111", "Gran profesional con experiencia de 5 años en redacción de contratos mercantiles",
+        mockLawyer(sqLiteDatabase, new Lawyer("Rodrigo Benavidez",
+                "Abogado Mercantilista",
+                "300 200 1111",
+                "Gran profesional con experiencia de 5 años en redacción de contratos mercantiles",
                 "rodrigo_benavidez.jpg"));
-        mockLawyer(sqLiteDatabase, new Lawyer("Tom Bonz", "Abogado penalista",
-                "300 200 1111", "Gran profesional con experiencia de 5 años en casos penales.",
+        mockLawyer(sqLiteDatabase, new Lawyer("Tom Bonz",
+                "Abogado penalista",
+                "300 200 1111",
+                "Gran profesional con experiencia de 5 años en casos penales.",
                 "tom_bonz.jpg"));
     }
 
