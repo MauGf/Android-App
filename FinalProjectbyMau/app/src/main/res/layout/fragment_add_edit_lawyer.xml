@@ -71,4 +71,21 @@
             tools:text="@string/lorem" />
     </android.support.design.widget.TextInputLayout>
 
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_direction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_large">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_direction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|start"
+            android:hint="@string/direccion_title"
+            android:imeOptions="actionDone"
+            android:inputType="text|textMultiLine"
+            tools:text="@string/direccion" />
+    </android.support.design.widget.TextInputLayout>
+
 </LinearLayout>
