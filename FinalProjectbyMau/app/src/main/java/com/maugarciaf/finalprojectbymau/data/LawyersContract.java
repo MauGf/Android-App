@@ -13,5 +13,6 @@ public class LawyersContract {
         public static final String PHONE_NUMBER = "phoneNumber";
         public static final String AVATAR_URI = "avatarUri";
         public static final String BIO = "bio";
+        public static final String DIRECTION = "direction";
     }
 }

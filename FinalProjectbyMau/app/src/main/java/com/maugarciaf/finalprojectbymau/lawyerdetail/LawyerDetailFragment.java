@@ -39,6 +39,8 @@ public class LawyerDetailFragment extends Fragment {
     private TextView mPhoneNumber;
     private TextView mSpecialty;
     private TextView mBio;
+    private TextView mDirection;
+
 
     private LawyersDbHelper mLawyersDbHelper;
 
@@ -76,6 +78,7 @@ public class LawyerDetailFragment extends Fragment {
         mPhoneNumber = (TextView) root.findViewById(R.id.tv_phone_number);
         mSpecialty = (TextView) root.findViewById(R.id.tv_specialty);
         mBio = (TextView) root.findViewById(R.id.tv_bio);
+        mDirection = (TextView) root.findViewById (R.id.tv_direction) ;
 
         mLawyersDbHelper = new LawyersDbHelper(getActivity());
 
@@ -122,6 +125,7 @@ public class LawyerDetailFragment extends Fragment {
         mPhoneNumber.setText(lawyer.getPhoneNumber());
         mSpecialty.setText(lawyer.getSpecialty());
         mBio.setText(lawyer.getBio());
+        mDirection.setText(lawyer.getDirection());
     }
 
     private void showEditScreen() {

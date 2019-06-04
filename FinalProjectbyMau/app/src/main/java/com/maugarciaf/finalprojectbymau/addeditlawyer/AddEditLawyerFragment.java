@@ -31,10 +31,12 @@ public class AddEditLawyerFragment extends Fragment {
     private TextInputEditText mPhoneNumberField;
     private TextInputEditText mSpecialtyField;
     private TextInputEditText mBioField;
+    private TextInputEditText mDirField;
     private TextInputLayout mNameLabel;
     private TextInputLayout mPhoneNumberLabel;
     private TextInputLayout mSpecialtyLabel;
     private TextInputLayout mBioLabel;
+    private TextInputLayout mDirLabel;
 
 
     public AddEditLawyerFragment() {
@@ -68,10 +70,12 @@ public class AddEditLawyerFragment extends Fragment {
         mPhoneNumberField = (TextInputEditText) root.findViewById (R.id.et_phone_number);
         mSpecialtyField = (TextInputEditText) root.findViewById (R.id.et_specialty);
         mBioField = (TextInputEditText) root.findViewById (R.id.et_bio);
+        mDirField = (TextInputEditText) root.findViewById (R.id.et_direction);
         mNameLabel = (TextInputLayout) root.findViewById (R.id.til_name);
         mPhoneNumberLabel = (TextInputLayout) root.findViewById (R.id.til_phone_number);
         mSpecialtyLabel = (TextInputLayout) root.findViewById (R.id.til_specialty);
         mBioLabel = (TextInputLayout) root.findViewById (R.id.til_bio);
+        mDirLabel = (TextInputLayout) root.findViewById (R.id.til_direction);
 
         // Eventos
         mSaveButton.setOnClickListener (new View.OnClickListener () {
@@ -102,6 +106,7 @@ public class AddEditLawyerFragment extends Fragment {
         String phoneNumber = mPhoneNumberField.getText ().toString ();
         String specialty = mSpecialtyField.getText ().toString ();
         String bio = mBioField.getText ().toString ();
+        String dir = mDirField.getText ().toString ();
 
         if (TextUtils.isEmpty (name)) {
             mNameLabel.setError (getString (R.string.field_error));
@@ -123,12 +128,16 @@ public class AddEditLawyerFragment extends Fragment {
             mBioLabel.setError (getString (R.string.field_error));
             error = true;
         }
+        if (TextUtils.isEmpty (dir)) {
+            mDirLabel.setError (getString (R.string.field_error));
+            error = true;
+        }
 
         if (error) {
             return;
         }
 
-        Lawyer lawyer = new Lawyer (name, specialty, phoneNumber, bio, mAvatarUri);
+        Lawyer lawyer = new Lawyer (name, specialty, phoneNumber, bio, dir,  mAvatarUri);
 
 
         new AddEditLawyerTask ().execute (lawyer);
@@ -157,6 +166,7 @@ public class AddEditLawyerFragment extends Fragment {
         mSpecialtyField.setText (lawyer.getSpecialty ());
         mBioField.setText (lawyer.getBio ());
         mAvatarUri = lawyer.getAvatarUri ();
+        mDirField.setText (lawyer.getDirection ());
     }
 
     private void showLoadError() {
