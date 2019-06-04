@@ -161,7 +161,7 @@ public class AddEditLawyerFragment extends Fragment {
 
     private void showLoadError() {
         Toast.makeText (getActivity (),
-                "Error al editar abogado", Toast.LENGTH_SHORT).show ();
+                "Error al editar Doctor", Toast.LENGTH_SHORT).show ();
     }
 
     private class GetLawyerByIdTask extends AsyncTask<Void, Void, Cursor> {

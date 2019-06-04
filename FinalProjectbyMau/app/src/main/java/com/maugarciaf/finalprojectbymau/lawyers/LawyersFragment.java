@@ -103,7 +103,7 @@ public class LawyersFragment extends Fragment {
 
     private void showSuccessfullSavedMessage() {
         Toast.makeText(getActivity(),
-                "Abogado guardado correctamente", Toast.LENGTH_SHORT).show();
+                "Doctor guardado correctamente", Toast.LENGTH_SHORT).show();
     }
 
     private void showAddScreen() {

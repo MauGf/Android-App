@@ -97,7 +97,7 @@ public class LawyerDetailFragment extends Fragment {
             case R.id.action_delete:
                 new DeleteLawyerTask().execute();
                 Toast.makeText(getActivity(),
-                        "Se borro un abogado", Toast.LENGTH_SHORT).show();
+                        "Se borro un Doctor", Toast.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -146,7 +146,7 @@ public class LawyerDetailFragment extends Fragment {
 
     private void showDeleteError() {
         Toast.makeText(getActivity(),
-                "Error al eliminar abogado", Toast.LENGTH_SHORT).show();
+                "Error al eliminar Doctor", Toast.LENGTH_SHORT).show();
     }
 
     private class GetLawyerByIdTask extends AsyncTask<Void, Void, Cursor> {

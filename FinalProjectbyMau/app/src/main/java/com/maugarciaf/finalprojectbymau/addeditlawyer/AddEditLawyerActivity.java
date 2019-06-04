@@ -1,6 +1,8 @@
 package com.maugarciaf.finalprojectbymau.addeditlawyer;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -10,20 +12,23 @@ import android.view.View;
 import com.maugarciaf.finalprojectbymau.R;
 import com.maugarciaf.finalprojectbymau.lawyers.LawyersActivity;
 
+import java.util.Objects;
+
 public class AddEditLawyerActivity extends AppCompatActivity {
 
     public static final int REQUEST_ADD_LAWYER = 1;
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_add_edit_lawyer);
         Toolbar toolbar = findViewById (R.id.toolbar);
         setSupportActionBar (toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull (getSupportActionBar ()).setDisplayHomeAsUpEnabled(true);
 
         String lawyerId = getIntent().getStringExtra(LawyersActivity.EXTRA_LAWYER_ID);
 
-        setTitle(lawyerId == null ? "Añadir abogado" : "Editar abogado");
+        setTitle(lawyerId == null ? "Añadir Doctor" : "Editar Doctor");
 
         AddEditLawyerFragment addEditLawyerFragment = (AddEditLawyerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.add_edit_lawyer_container);

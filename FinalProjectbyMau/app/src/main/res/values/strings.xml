@@ -27,9 +27,9 @@
     <string name="error_email_exists">Email Already Exists</string>
     <string name="error_password_match">Password Does Not Matches</string>
     <string name="error_valid_email_password">Nombre o password incorrectos</string>
-    <string name="title_activity_lawyers">LawyersActivity</string>
-    <string name="activity_listado">Activity Abogados</string>
-    <string name="title_activity_lawyer_detail">LawyerDetailActivity</string>
+    <string name="title_activity_lawyers">DoctorActivity</string>
+    <string name="activity_listado">Doctores</string>
+    <string name="title_activity_lawyer_detail">DocotorDetailActivity</string>
 
     <string name="large_text">
         "Material is the metaphor.\n\n"
