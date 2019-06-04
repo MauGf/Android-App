@@ -44,11 +44,24 @@
         android:text="@string/biografa"
         android:textColor="?colorPrimary" />
 
+
     <TextView
         android:id="@+id/tv_bio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         tools:text="@string/large_text" />
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:text="@string/direccion_title"
+        android:textColor="?colorPrimary" />
+    <TextView
+        android:id="@+id/tv_direction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        tools:text="@string/direccion" />
 </LinearLayout>
