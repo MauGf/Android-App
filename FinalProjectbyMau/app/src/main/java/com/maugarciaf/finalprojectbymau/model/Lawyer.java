@@ -14,16 +14,20 @@ public class Lawyer {
     private String phoneNumber;
     private String bio;
     private String avatarUri;
+    private String direction;
+
 
     public Lawyer(String name,
                   String specialty, String phoneNumber,
-                  String bio, String avatarUri) {
+                  String bio, String direction, String avatarUri) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
         this.specialty = specialty;
         this.phoneNumber = phoneNumber;
         this.bio = bio;
+        this.direction = direction;
         this.avatarUri = avatarUri;
+
     }
 
     public Lawyer(Cursor cursor) {
@@ -32,7 +36,9 @@ public class Lawyer {
         specialty = cursor.getString(cursor.getColumnIndex(LawyersContract.LawyerEntry.SPECIALTY));
         phoneNumber = cursor.getString(cursor.getColumnIndex(LawyersContract.LawyerEntry.PHONE_NUMBER));
         bio = cursor.getString(cursor.getColumnIndex(LawyersContract.LawyerEntry.BIO));
+        direction = cursor.getString(cursor.getColumnIndex(LawyersContract.LawyerEntry.DIRECTION));
         avatarUri = cursor.getString(cursor.getColumnIndex(LawyersContract.LawyerEntry.AVATAR_URI));
+
     }
 
     public ContentValues toContentValues() {
@@ -42,7 +48,9 @@ public class Lawyer {
         values.put(LawyersContract.LawyerEntry.SPECIALTY, specialty);
         values.put(LawyersContract.LawyerEntry.PHONE_NUMBER, phoneNumber);
         values.put(LawyersContract.LawyerEntry.BIO, bio);
+        values.put(LawyersContract.LawyerEntry.DIRECTION, direction);
         values.put(LawyersContract.LawyerEntry.AVATAR_URI, avatarUri);
+
         return values;
     }
 
@@ -66,7 +74,11 @@ public class Lawyer {
         return bio;
     }
 
+    public String getDirection() {
+        return direction;
+    }
     public String getAvatarUri() {
         return avatarUri;
     }
+
 }
