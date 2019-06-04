@@ -24,6 +24,7 @@ public class LawyersDbHelper extends SQLiteOpenHelper {
                 + LawyersContract.LawyerEntry.SPECIALTY + " TEXT NOT NULL,"
                 + LawyersContract.LawyerEntry.PHONE_NUMBER + " TEXT NOT NULL,"
                 + LawyersContract.LawyerEntry.BIO + " TEXT NOT NULL,"
+                + LawyersContract.LawyerEntry.DIRECTION + " TEXT NOT NULL,"
                 + LawyersContract.LawyerEntry.AVATAR_URI + " TEXT,"
                 + "UNIQUE (" + LawyersContract.LawyerEntry.ID + "))");
 
@@ -39,41 +40,48 @@ public class LawyersDbHelper extends SQLiteOpenHelper {
                 "Abogado penalista",
                 "300 200 1111",
                 "Gran profesional con experiencia de 5 años en casos penales.",
-                "carlos_perez.jpg"));
+                "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.","carlos_perez.jpg"));
         mockLawyer(sqLiteDatabase, new Lawyer("Daniel Samper",
                 "Abogado accidentes de tráfico",
                 "300 200 2222",
                 "Gran profesional con experiencia de 5 años en accidentes de tráfico.",
+                "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
                 "daniel_samper.jpg"));
         mockLawyer(sqLiteDatabase, new Lawyer("Lucia Aristizabal",
                 "Abogado de derechos laborales",
                 "300 200 3333",
                 "Gran profesional con más de 3 años de experiencia en defensa de los trabajadores.",
+                "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
                 "lucia_aristizabal.jpg"));
         mockLawyer(sqLiteDatabase, new Lawyer("Marina Acosta",
                 "Abogado de familia",
                 "300 200 4444",
                 "Gran profesional con experiencia de 5 años en casos de familia.",
+                "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
                 "marina_acosta.jpg"));
         mockLawyer(sqLiteDatabase, new Lawyer("Olga Ortiz",
                 "Abogado de administración pública",
                 "300 200 5555",
                 "Gran profesional con experiencia de 5 años en casos en expedientes de urbanismo.",
+                "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
                 "olga_ortiz.jpg"));
         mockLawyer(sqLiteDatabase, new Lawyer("Pamela Briger",
                 "Abogado fiscalista",
                 "300 200 6666",
                 "Gran profesional con experiencia de 5 años en casos de derecho financiero",
+                "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
                 "pamela_briger.jpg"));
         mockLawyer(sqLiteDatabase, new Lawyer("Rodrigo Benavidez",
                 "Abogado Mercantilista",
                 "300 200 1111",
                 "Gran profesional con experiencia de 5 años en redacción de contratos mercantiles",
+                "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
                 "rodrigo_benavidez.jpg"));
         mockLawyer(sqLiteDatabase, new Lawyer("Tom Bonz",
                 "Abogado penalista",
                 "300 200 1111",
                 "Gran profesional con experiencia de 5 años en casos penales.",
+                "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
                 "tom_bonz.jpg"));
     }
 
