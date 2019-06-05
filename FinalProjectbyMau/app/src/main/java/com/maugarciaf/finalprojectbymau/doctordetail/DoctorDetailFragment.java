@@ -32,7 +32,7 @@ import java.util.Objects;
 public class DoctorDetailFragment extends Fragment {
     private static final String ARG_DOCTOR_ID = "lawyerId";
 
-    private String mLawyerId;
+    private String mDoctorId;
 
     private CollapsingToolbarLayout mCollapsingView;
     private ImageView mAvatar;
@@ -62,7 +62,7 @@ public class DoctorDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            mLawyerId = getArguments().getString(ARG_DOCTOR_ID);
+            mDoctorId = getArguments().getString(ARG_DOCTOR_ID);
         }
 
         setHasOptionsMenu(true);
@@ -88,7 +88,7 @@ public class DoctorDetailFragment extends Fragment {
     }
 
     private void loadLawyer() {
-        new GetLawyerByIdTask().execute();
+        new GetDoctorByIdTask().execute();
     }
 
     @Override
@@ -98,7 +98,7 @@ public class DoctorDetailFragment extends Fragment {
                 showEditScreen();
                 break;
             case R.id.action_delete:
-                new DeleteLawyerTask().execute();
+                new DeleteDoctorTask().execute();
                 Toast.makeText(getActivity(),
                         "Se borro un Doctor", Toast.LENGTH_SHORT).show();
                 break;
@@ -108,7 +108,7 @@ public class DoctorDetailFragment extends Fragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == DoctorsFragment.REQUEST_UPDATE_DELETE_LAWYER) {
+        if (requestCode == DoctorsFragment.REQUEST_UPDATE_DELETE_DOCTOR) {
             if (resultCode == Activity.RESULT_OK) {
                 getActivity().setResult(Activity.RESULT_OK);
                 getActivity().finish();
@@ -130,12 +130,12 @@ public class DoctorDetailFragment extends Fragment {
 
     private void showEditScreen() {
         Intent intent = new Intent (getActivity(), AddEditDoctorActivity.class);
-        intent.putExtra(DoctorsActivity.EXTRA_DOCTOR_ID, mLawyerId);
-        startActivityForResult(intent, DoctorsFragment.REQUEST_UPDATE_DELETE_LAWYER);
+        intent.putExtra(DoctorsActivity.EXTRA_DOCTOR_ID, mDoctorId);
+        startActivityForResult(intent, DoctorsFragment.REQUEST_UPDATE_DELETE_DOCTOR);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    private void showLawyersScreen(boolean requery) {
+    private void showDoctorsScreen(boolean requery) {
         if (!requery) {
             showDeleteError();
         }
@@ -153,11 +153,11 @@ public class DoctorDetailFragment extends Fragment {
                 "Error al eliminar Doctor", Toast.LENGTH_SHORT).show();
     }
 
-    private class GetLawyerByIdTask extends AsyncTask<Void, Void, Cursor> {
+    private class GetDoctorByIdTask extends AsyncTask<Void, Void, Cursor> {
 
         @Override
         protected Cursor doInBackground(Void... voids) {
-            return mDoctorsDbHelper.getLawyerById(mLawyerId);
+            return mDoctorsDbHelper.getDoctorById (mDoctorId);
         }
 
         @Override
@@ -171,18 +171,18 @@ public class DoctorDetailFragment extends Fragment {
 
     }
 
-    private class DeleteLawyerTask extends AsyncTask<Void, Void, Integer> {
+    private class DeleteDoctorTask extends AsyncTask<Void, Void, Integer> {
 
         @Override
         protected Integer doInBackground(Void... voids) {
 
-            return mDoctorsDbHelper.deleteLawyer(mLawyerId);
+            return mDoctorsDbHelper.deleteDoctor(mDoctorId);
         }
 
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         protected void onPostExecute(Integer integer) {
-            showLawyersScreen(integer > 0);
+            showDoctorsScreen(integer > 0);
         }
 
     }
