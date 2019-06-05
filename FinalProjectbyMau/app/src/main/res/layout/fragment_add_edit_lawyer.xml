@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:hint="Especialidad"
             android:inputType="text"
-            tools:text="Abogado penalista" />
+            tools:text="Odontologo" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
