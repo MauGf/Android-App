@@ -18,8 +18,8 @@ import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.maugarciaf.finalprojectbymau.R;
 import com.maugarciaf.finalprojectbymau.data.DoctorsContract;
 
-public class LawyersCursorAdapter extends CursorAdapter {
-    public LawyersCursorAdapter(Context context, Cursor c) {
+public class DoctorsCursorAdapter extends CursorAdapter {
+    public DoctorsCursorAdapter(Context context, Cursor c) {
         super (context, c, 0);
     }
 

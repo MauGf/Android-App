@@ -20,22 +20,22 @@ import com.maugarciaf.finalprojectbymau.data.DoctorsContract;
 import com.maugarciaf.finalprojectbymau.data.DoctorsDbHelper;
 import com.maugarciaf.finalprojectbymau.doctordetail.DoctorDetailActivity;
 
-public class LawyersFragment extends Fragment {
+public class DoctorsFragment extends Fragment {
     public static final int REQUEST_UPDATE_DELETE_LAWYER = 2;
 
     private DoctorsDbHelper mDoctorsDbHelper;
 
     private ListView mLawyersList;
-    private LawyersCursorAdapter mLawyersAdapter;
+    private DoctorsCursorAdapter mLawyersAdapter;
     private FloatingActionButton mAddButton;
 
 
-    public LawyersFragment() {
+    public DoctorsFragment() {
         // Required empty public constructor
     }
 
-    public static LawyersFragment newInstance() {
-        return new LawyersFragment();
+    public static DoctorsFragment newInstance() {
+        return new DoctorsFragment ();
     }
 
     @Override
@@ -45,7 +45,7 @@ public class LawyersFragment extends Fragment {
 
         // Referencias UI
         mLawyersList = (ListView) root.findViewById(R.id.lawyers_list);
-        mLawyersAdapter = new LawyersCursorAdapter(getActivity(), null);
+        mLawyersAdapter = new DoctorsCursorAdapter (getActivity(), null);
         mAddButton = (FloatingActionButton) getActivity().findViewById(R.id.fab);
 
         // Setup
@@ -113,7 +113,7 @@ public class LawyersFragment extends Fragment {
 
     private void showDetailScreen(String lawyerId) {
         Intent intent = new Intent(getActivity(), DoctorDetailActivity.class);
-        intent.putExtra(LawyersActivity.EXTRA_LAWYER_ID, lawyerId);
+        intent.putExtra(DoctorsActivity.EXTRA_LAWYER_ID, lawyerId);
         startActivityForResult(intent, REQUEST_UPDATE_DELETE_LAWYER);
     }
 

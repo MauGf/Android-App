@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.maugarciaf.finalprojectbymau.R;
-import com.maugarciaf.finalprojectbymau.doctors.LawyersActivity;
+import com.maugarciaf.finalprojectbymau.doctors.DoctorsActivity;
 
 import java.util.Objects;
 
@@ -23,21 +23,21 @@ public class AddEditDoctorActivity extends AppCompatActivity {
         setSupportActionBar (toolbar);
         Objects.requireNonNull (getSupportActionBar ()).setDisplayHomeAsUpEnabled(true);
 
-        String lawyerId = getIntent().getStringExtra(LawyersActivity.EXTRA_LAWYER_ID);
+        String doctorId = getIntent().getStringExtra(DoctorsActivity.EXTRA_LAWYER_ID);
 
-        setTitle(lawyerId == null ? "Añadir Doctor" : "Editar Doctor");
+        setTitle(doctorId == null ? "Añadir Doctor" : "Editar Doctor");
 
         AddEditDoctorFragment addEditDoctorFragment = (AddEditDoctorFragment)
                 getSupportFragmentManager().findFragmentById(R.id.add_edit_lawyer_container);
         if (addEditDoctorFragment == null) {
-            addEditDoctorFragment = AddEditDoctorFragment.newInstance(lawyerId);
+            addEditDoctorFragment = AddEditDoctorFragment.newInstance(doctorId);
             getSupportFragmentManager()
                     .beginTransaction()
                     .add(R.id.add_edit_lawyer_container, addEditDoctorFragment)
                     .commit();
         }
     }
-
+    
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();

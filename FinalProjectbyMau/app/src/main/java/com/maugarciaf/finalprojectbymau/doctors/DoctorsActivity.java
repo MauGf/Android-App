@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import com.maugarciaf.finalprojectbymau.AboutActivity;
 import com.maugarciaf.finalprojectbymau.R;
 
-public class LawyersActivity extends AppCompatActivity {
+public class DoctorsActivity extends AppCompatActivity {
     public static final String EXTRA_LAWYER_ID = "extra_lawyer_id";
 
     @Override
@@ -20,11 +20,11 @@ public class LawyersActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById (R.id.toolbar);
         setSupportActionBar (toolbar);
 
-        LawyersFragment fragment = (LawyersFragment)
+        DoctorsFragment fragment = (DoctorsFragment)
                 getSupportFragmentManager ().findFragmentById (R.id.lawyers_container);
 
         if (fragment == null) {
-            fragment = LawyersFragment.newInstance ();
+            fragment = DoctorsFragment.newInstance ();
             getSupportFragmentManager ()
                     .beginTransaction ()
                     .add (R.id.lawyers_container, fragment)
