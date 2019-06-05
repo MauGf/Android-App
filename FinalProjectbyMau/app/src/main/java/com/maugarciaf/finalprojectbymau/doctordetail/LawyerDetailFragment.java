@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.maugarciaf.finalprojectbymau.R;
-import com.maugarciaf.finalprojectbymau.addeditdoctor.AddEditLawyerActivity;
+import com.maugarciaf.finalprojectbymau.addeditdoctor.AddEditDoctorActivity;
 import com.maugarciaf.finalprojectbymau.model.Doctors;
 import com.maugarciaf.finalprojectbymau.data.LawyersDbHelper;
 import com.maugarciaf.finalprojectbymau.doctors.LawyersActivity;
@@ -129,7 +129,7 @@ public class LawyerDetailFragment extends Fragment {
     }
 
     private void showEditScreen() {
-        Intent intent = new Intent (getActivity(), AddEditLawyerActivity.class);
+        Intent intent = new Intent (getActivity(), AddEditDoctorActivity.class);
         intent.putExtra(LawyersActivity.EXTRA_LAWYER_ID, mLawyerId);
         startActivityForResult(intent, LawyersFragment.REQUEST_UPDATE_DELETE_LAWYER);
     }
