@@ -51,7 +51,7 @@ public class DoctorsDbHelper extends SQLiteOpenHelper {
         mockDoctor(sqLiteDatabase, new Doctors ("Dra. Carmen Alexandra",
                 "Pediatra",
                 "300 200 3333",
-                "Gran profesional con más de 3 años de experiencia en el area de dermatologia.",
+                "Gran profesional con más de 3 años de experiencia en el area de pediatria.",
                 "Colonia Lomas Verdes, 5ta calle poniente # 5276, San Salvador",
                 "image3.jpg"));
         mockDoctor(sqLiteDatabase, new Doctors ("Dra. Gladis Carolina",
