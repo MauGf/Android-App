@@ -36,53 +36,54 @@ public class DoctorsDbHelper extends SQLiteOpenHelper {
     }
 
     private void mockData(SQLiteDatabase sqLiteDatabase) {
-        mockDoctor(sqLiteDatabase, new Doctors ("Carlos Perez",
-                "Abogado penalista",
+        mockDoctor(sqLiteDatabase, new Doctors ("Dr. Boris Ferman",
+                "Anestesiólogo",
                 "300 200 1111",
-                "Gran profesional con experiencia de 5 años en casos penales.",
-                "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.","carlos_perez.jpg"));
-        mockDoctor(sqLiteDatabase, new Doctors ("Daniel Samper",
-                "Abogado accidentes de tráfico",
+                "Gran profesional con experiencia de 5 años en el area.",
+                "Villavicencio Plaza, Local 4 Col Escalón,San Salvador.",
+                "image1.jpg"));
+        mockDoctor(sqLiteDatabase, new Doctors ("Dr. Jose Heriberto",
+                "Fisiatra",
                 "300 200 2222",
-                "Gran profesional con experiencia de 5 años en accidentes de tráfico.",
-                "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
-                "daniel_samper.jpg"));
-        mockDoctor(sqLiteDatabase, new Doctors ("Lucia Aristizabal",
-                "Abogado de derechos laborales",
+                "Gran profesional con experiencia de 5 años en el area de fisioterapia.",
+                "87 av. Norte y 1a. Calle Pte. # 4444, CECLINE, Colonia Escalon.",
+                "image2.jpg"));
+        mockDoctor(sqLiteDatabase, new Doctors ("Dra. Carmen Alexandra",
+                "Pediatra",
                 "300 200 3333",
-                "Gran profesional con más de 3 años de experiencia en defensa de los trabajadores.",
-                "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
-                "lucia_aristizabal.jpg"));
-        mockDoctor(sqLiteDatabase, new Doctors ("Marina Acosta",
-                "Abogado de familia",
+                "Gran profesional con más de 3 años de experiencia en el area de dermatologia.",
+                "Colonia Lomas Verdes, 5ta calle poniente # 5276, San Salvador",
+                "image3.jpg"));
+        mockDoctor(sqLiteDatabase, new Doctors ("Dra. Gladis Carolina",
+                "Dermatologa",
                 "300 200 4444",
-                "Gran profesional con experiencia de 5 años en casos de familia.",
-                "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
-                "marina_acosta.jpg"));
-        mockDoctor(sqLiteDatabase, new Doctors ("Olga Ortiz",
-                "Abogado de administración pública",
+                "Gran profesional con experiencia de 5 años en en el area.",
+                "8 av. Norte entre 5ta y 7° Calle Oriente, Barrio Nuevo Metapan, Santa Ana",
+                "image4.jpg"));
+        mockDoctor(sqLiteDatabase, new Doctors ("Dra. Liliana Morely",
+                "Medico General",
                 "300 200 5555",
-                "Gran profesional con experiencia de 5 años en casos en expedientes de urbanismo.",
-                "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
-                "olga_ortiz.jpg"));
-        mockDoctor(sqLiteDatabase, new Doctors ("Pamela Briger",
-                "Abogado fiscalista",
+                "Gran profesional con experiencia de mas de 5 años en el area.",
+                "13 calle oriente entre avenida independencia sur y 3a avenida sur, Edificio Clínicas HM, Santa Ana.(En la misma cuadra del colegio Montessori y los Bomberos).",
+                "image5.jpg"));
+        mockDoctor(sqLiteDatabase, new Doctors ("Dra. Cecilia Irene",
+                "Oncologa",
                 "300 200 6666",
-                "Gran profesional con experiencia de 5 años en casos de derecho financiero",
+                "Gran profesional con experiencia de 5 años en el area de oncologia",
                 "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
-                "pamela_briger.jpg"));
-        mockDoctor(sqLiteDatabase, new Doctors ("Rodrigo Benavidez",
-                "Abogado Mercantilista",
+                "image6.jpg"));
+        mockDoctor(sqLiteDatabase, new Doctors ("Dr. Mauricio Ernesto",
+                "Gastroenterologo",
                 "300 200 1111",
-                "Gran profesional con experiencia de 5 años en redacción de contratos mercantiles",
-                "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
-                "rodrigo_benavidez.jpg"));
-        mockDoctor(sqLiteDatabase, new Doctors ("Tom Bonz",
-                "Abogado penalista",
+                "Gran profesional con experiencia de 5 años en el area",
+                "Villavicencio Plaza, 2ª nivel, local 26, Col Escalon, San Salvador.",
+                "image7.jpg"));
+        mockDoctor(sqLiteDatabase, new Doctors ("Dr. Ricardo Ernesto",
+                "Neurocirujano",
                 "300 200 1111",
-                "Gran profesional con experiencia de 5 años en casos penales.",
-                "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
-                "tom_bonz.jpg"));
+                "Gran profesional con experiencia de 5 años en el area.",
+                "Villavicencio Plaza 2° nivel,local Neurociencias Col. Escalon.",
+                "image8.jpg"));
     }
 
     public long mockDoctor(SQLiteDatabase db, Doctors doctors) {
