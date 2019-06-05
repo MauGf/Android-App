@@ -137,5 +137,8 @@
     <string name="acerca_de">Acerca de</string>
     <string name="direccion">Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.</string>
     <string name="direccion_title">Dirección</string>
+    <string name="error_add_info">Error al agregar nueva información</string>
+    <string name="error_edit_doc">Error al editar Doctor</string>
+    <string name="doctor_deleted">Se borro un Doctor</string>
 
 </resources>
