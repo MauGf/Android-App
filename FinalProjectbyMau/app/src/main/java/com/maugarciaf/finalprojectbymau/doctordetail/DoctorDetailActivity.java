@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 import com.maugarciaf.finalprojectbymau.R;
-import com.maugarciaf.finalprojectbymau.doctors.LawyersActivity;
+import com.maugarciaf.finalprojectbymau.doctors.DoctorsActivity;
 import com.maugarciaf.finalprojectbymau.utils.Tools;
 
 import java.util.Objects;
@@ -26,7 +26,7 @@ public class DoctorDetailActivity extends AppCompatActivity {
 
         Tools.setSystemBarTransparent (this);
 
-        String id = getIntent().getStringExtra(LawyersActivity.EXTRA_LAWYER_ID);
+        String id = getIntent().getStringExtra(DoctorsActivity.EXTRA_LAWYER_ID);
 
         DoctorDetailFragment fragment = (DoctorDetailFragment)
                 getSupportFragmentManager().findFragmentById(R.id.lawyer_detail_container);

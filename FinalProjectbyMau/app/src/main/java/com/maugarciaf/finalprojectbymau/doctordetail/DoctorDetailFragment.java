@@ -24,8 +24,8 @@ import com.maugarciaf.finalprojectbymau.R;
 import com.maugarciaf.finalprojectbymau.addeditdoctor.AddEditDoctorActivity;
 import com.maugarciaf.finalprojectbymau.data.DoctorsDbHelper;
 import com.maugarciaf.finalprojectbymau.model.Doctors;
-import com.maugarciaf.finalprojectbymau.doctors.LawyersActivity;
-import com.maugarciaf.finalprojectbymau.doctors.LawyersFragment;
+import com.maugarciaf.finalprojectbymau.doctors.DoctorsActivity;
+import com.maugarciaf.finalprojectbymau.doctors.DoctorsFragment;
 
 import java.util.Objects;
 
@@ -108,7 +108,7 @@ public class DoctorDetailFragment extends Fragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == LawyersFragment.REQUEST_UPDATE_DELETE_LAWYER) {
+        if (requestCode == DoctorsFragment.REQUEST_UPDATE_DELETE_LAWYER) {
             if (resultCode == Activity.RESULT_OK) {
                 getActivity().setResult(Activity.RESULT_OK);
                 getActivity().finish();
@@ -130,8 +130,8 @@ public class DoctorDetailFragment extends Fragment {
 
     private void showEditScreen() {
         Intent intent = new Intent (getActivity(), AddEditDoctorActivity.class);
-        intent.putExtra(LawyersActivity.EXTRA_LAWYER_ID, mLawyerId);
-        startActivityForResult(intent, LawyersFragment.REQUEST_UPDATE_DELETE_LAWYER);
+        intent.putExtra(DoctorsActivity.EXTRA_LAWYER_ID, mLawyerId);
+        startActivityForResult(intent, DoctorsFragment.REQUEST_UPDATE_DELETE_LAWYER);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

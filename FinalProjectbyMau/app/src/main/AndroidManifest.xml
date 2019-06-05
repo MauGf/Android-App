@@ -20,7 +20,7 @@
             android:label="@string/title_activity_lawyer_detail"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".doctors.LawyersActivity"
+            android:name=".doctors.DoctorsActivity"
             android:label="@string/activity_listado"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">

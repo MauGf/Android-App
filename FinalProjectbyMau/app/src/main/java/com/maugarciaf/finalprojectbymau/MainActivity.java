@@ -11,7 +11,7 @@ import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 
 import com.maugarciaf.finalprojectbymau.helper.InputValidationLogin;
-import com.maugarciaf.finalprojectbymau.doctors.LawyersActivity;
+import com.maugarciaf.finalprojectbymau.doctors.DoctorsActivity;
 import com.maugarciaf.finalprojectbymau.data.DatabaseHelperUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 , textInputEditTextPassword.getText ().toString ().trim ())) {
 
 
-            Intent accountsIntent = new Intent (activity, LawyersActivity.class);
+            Intent accountsIntent = new Intent (activity, DoctorsActivity.class);
             accountsIntent.putExtra ("EMAIL", textInputEditTextName.getText ().toString ().trim ());
             emptyInputEditText ();
             startActivity (accountsIntent);

@@ -13,7 +13,7 @@ import java.util.Objects;
 
 public class AddEditDoctorActivity extends AppCompatActivity {
 
-    public static final int REQUEST_ADD_LAWYER = 1;
+    public static final int REQUEST_ADD_DOCTOR = 1;
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class AddEditDoctorActivity extends AppCompatActivity {
         setSupportActionBar (toolbar);
         Objects.requireNonNull (getSupportActionBar ()).setDisplayHomeAsUpEnabled(true);
 
-        String doctorId = getIntent().getStringExtra(DoctorsActivity.EXTRA_LAWYER_ID);
+        String doctorId = getIntent().getStringExtra(DoctorsActivity.EXTRA_DOCTOR_ID);
 
         setTitle(doctorId == null ? "Añadir Doctor" : "Editar Doctor");
 
@@ -37,7 +37,7 @@ public class AddEditDoctorActivity extends AppCompatActivity {
                     .commit();
         }
     }
-    
+
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
