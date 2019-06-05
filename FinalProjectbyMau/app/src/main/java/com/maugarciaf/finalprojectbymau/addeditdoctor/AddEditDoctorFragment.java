@@ -157,7 +157,7 @@ public class AddEditDoctorFragment extends Fragment {
 
     private void showAddEditError() {
         Toast.makeText (getActivity (),
-                "Error al agregar nueva información", Toast.LENGTH_SHORT).show ();
+                getResources ().getString(R.string.error_add_info), Toast.LENGTH_SHORT).show ();
     }
 
     private void showDoctor(Doctors doctors) {
@@ -171,7 +171,7 @@ public class AddEditDoctorFragment extends Fragment {
 
     private void showLoadError() {
         Toast.makeText (getActivity (),
-                "Error al editar Doctor", Toast.LENGTH_SHORT).show ();
+                getResources ().getString(R.string.error_edit_doc), Toast.LENGTH_SHORT).show ();
     }
 
     private class GetDoctorByIdTask extends AsyncTask<Void, Void, Cursor> {
