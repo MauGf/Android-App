@@ -21,7 +21,7 @@
             android:hint="Nombre"
             android:inputType="textPersonName"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            tools:text="Alejandro Riascos" />
+            tools:text="Kamila Alexandra" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:hint="Especialidad"
             android:inputType="text"
-            tools:text="Odontologo" />
+            tools:text="Odontologa" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout

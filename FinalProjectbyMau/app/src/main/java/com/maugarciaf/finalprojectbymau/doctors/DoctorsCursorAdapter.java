@@ -26,7 +26,7 @@ public class DoctorsCursorAdapter extends CursorAdapter {
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
         LayoutInflater inflater = LayoutInflater.from (context);
-        return inflater.inflate (R.layout.list_item_lawyer, viewGroup, false);
+        return inflater.inflate (R.layout.list_item_doctor, viewGroup, false);
     }
 
     @Override

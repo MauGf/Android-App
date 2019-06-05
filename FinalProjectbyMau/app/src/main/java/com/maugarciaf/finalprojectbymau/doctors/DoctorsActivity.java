@@ -16,7 +16,7 @@ public class DoctorsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
-        setContentView (R.layout.activity_lawyers);
+        setContentView (R.layout.activity_doctors);
         Toolbar toolbar = findViewById (R.id.toolbar);
         setSupportActionBar (toolbar);
 

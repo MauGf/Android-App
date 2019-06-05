@@ -41,7 +41,7 @@ public class DoctorsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_lawyers, container, false);
+        View root = inflater.inflate(R.layout.fragment_doctors, container, false);
 
         // Referencias UI
         mDoctorsList = (ListView) root.findViewById(R.id.lawyers_list);

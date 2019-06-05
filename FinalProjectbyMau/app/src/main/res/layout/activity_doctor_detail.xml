@@ -48,6 +48,6 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_lawyer_detail" />
+    <include layout="@layout/content_doctor_detail" />
 
 </android.support.design.widget.CoordinatorLayout>

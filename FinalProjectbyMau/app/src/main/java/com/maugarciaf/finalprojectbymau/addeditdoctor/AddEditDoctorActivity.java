@@ -18,7 +18,7 @@ public class AddEditDoctorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
-        setContentView (R.layout.activity_add_edit_lawyer);
+        setContentView (R.layout.activity_add_edit_doctor);
         Toolbar toolbar = findViewById (R.id.toolbar);
         setSupportActionBar (toolbar);
         Objects.requireNonNull (getSupportActionBar ()).setDisplayHomeAsUpEnabled(true);

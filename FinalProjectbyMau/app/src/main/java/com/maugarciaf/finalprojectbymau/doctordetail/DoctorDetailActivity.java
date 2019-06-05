@@ -19,7 +19,7 @@ public class DoctorDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
-        setContentView (R.layout.activity_lawyer_detail);
+        setContentView (R.layout.activity_doctor_detail);
         Toolbar toolbar = findViewById (R.id.toolbar);
         setSupportActionBar (toolbar);
         Objects.requireNonNull (getSupportActionBar ()).setDisplayHomeAsUpEnabled(true);
