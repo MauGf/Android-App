@@ -20,9 +20,9 @@ import com.maugarciaf.finalprojectbymau.data.DoctorsDbHelper;
 import com.maugarciaf.finalprojectbymau.model.Doctors;
 
 public class AddEditDoctorFragment extends Fragment {
-    private static final String ARG_LAWYER_ID = "arg_lawyer_id";
+    private static final String ARG_DOCTOR_ID = "arg_lawyer_id";
     private String mAvatarUri;
-    private String mLawyerId;
+    private String mDoctorId;
 
     private DoctorsDbHelper mDoctorsDbHelper;
 
@@ -46,7 +46,7 @@ public class AddEditDoctorFragment extends Fragment {
     public static AddEditDoctorFragment newInstance(String lawyerId) {
         AddEditDoctorFragment fragment = new AddEditDoctorFragment ();
         Bundle args = new Bundle ();
-        args.putString (ARG_LAWYER_ID, lawyerId);
+        args.putString (ARG_DOCTOR_ID, lawyerId);
         fragment.setArguments (args);
         return fragment;
     }
@@ -55,7 +55,7 @@ public class AddEditDoctorFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         if (getArguments () != null) {
-            mLawyerId = getArguments ().getString (ARG_LAWYER_ID);
+            mDoctorId = getArguments ().getString (ARG_DOCTOR_ID);
         }
     }
 
@@ -88,7 +88,7 @@ public class AddEditDoctorFragment extends Fragment {
         mDoctorsDbHelper = new DoctorsDbHelper (getActivity ());
 
         // Carga de datos
-        if (mLawyerId != null) {
+        if (mDoctorId != null) {
             loadLawyer ();
         }
 
@@ -140,7 +140,7 @@ public class AddEditDoctorFragment extends Fragment {
         Doctors doctors = new Doctors (name, specialty, phoneNumber, bio, dir,  mAvatarUri);
 
 
-        new AddEditLawyerTask ().execute (doctors);
+        new AddEditDoctorTask ().execute (doctors);
 
     }
 
@@ -178,7 +178,7 @@ public class AddEditDoctorFragment extends Fragment {
 
         @Override
         protected Cursor doInBackground(Void... voids) {
-            return mDoctorsDbHelper.getLawyerById (mLawyerId);
+            return mDoctorsDbHelper.getLawyerById (mDoctorId);
         }
 
         @Override
@@ -194,12 +194,12 @@ public class AddEditDoctorFragment extends Fragment {
 
     }
 
-    private class AddEditLawyerTask extends AsyncTask<Doctors, Void, Boolean> {
+    private class AddEditDoctorTask extends AsyncTask<Doctors, Void, Boolean> {
 
         @Override
         protected Boolean doInBackground(Doctors... doctors) {
-            if (mLawyerId != null) {
-                return mDoctorsDbHelper.updateLawyer (doctors[0], mLawyerId) > 0;
+            if (mDoctorId != null) {
+                return mDoctorsDbHelper.updateLawyer (doctors[0], mDoctorId) > 0;
             } else {
                 return mDoctorsDbHelper.saveLawyer (doctors[0]) > 0;
             }
