@@ -10,8 +10,8 @@ import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 
-import com.maugarciaf.finalprojectbymau.helper.InputValidation;
-import com.maugarciaf.finalprojectbymau.lawyers.LawyersActivity;
+import com.maugarciaf.finalprojectbymau.helper.InputValidationLogin;
+import com.maugarciaf.finalprojectbymau.doctors.LawyersActivity;
 import com.maugarciaf.finalprojectbymau.data.DatabaseHelperUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private AppCompatButton appCompatButtonLogin;
 
 
-    private InputValidation inputValidation;
+    private InputValidationLogin inputValidationLogin;
     private DatabaseHelperUser databaseHelper;
 
     @Override
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initObjects() {
         databaseHelper = new DatabaseHelperUser (activity);
-        inputValidation = new InputValidation (activity);
+        inputValidationLogin = new InputValidationLogin (activity);
 
     }
 
@@ -87,10 +87,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void verifyFromSQLite() {
-        if (!inputValidation.isInputEditTextFilled (textInputEditTextName, textInputLayoutName, getString (R.string.error_message_email))) {
+        if (!inputValidationLogin.isInputEditTextFilled (textInputEditTextName, textInputLayoutName, getString (R.string.error_message_email))) {
             return;
         }
-        if (!inputValidation.isInputEditTextFilled (textInputEditTextPassword, textInputLayoutPassword, getString (R.string.error_message_password))) {
+        if (!inputValidationLogin.isInputEditTextFilled (textInputEditTextPassword, textInputLayoutPassword, getString (R.string.error_message_password))) {
             return;
         }
 

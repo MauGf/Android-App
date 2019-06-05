@@ -7,7 +7,7 @@ import com.maugarciaf.finalprojectbymau.data.LawyersContract;
 
 import java.util.UUID;
 
-public class Lawyer {
+public class Doctors {
     private String id;
     private String name;
     private String specialty;
@@ -17,9 +17,9 @@ public class Lawyer {
     private String direction;
 
 
-    public Lawyer(String name,
-                  String specialty, String phoneNumber,
-                  String bio, String direction, String avatarUri) {
+    public Doctors(String name,
+                   String specialty, String phoneNumber,
+                   String bio, String direction, String avatarUri) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
         this.specialty = specialty;
@@ -30,7 +30,7 @@ public class Lawyer {
 
     }
 
-    public Lawyer(Cursor cursor) {
+    public Doctors(Cursor cursor) {
         id = cursor.getString(cursor.getColumnIndex(LawyersContract.LawyerEntry.ID));
         name = cursor.getString(cursor.getColumnIndex(LawyersContract.LawyerEntry.NAME));
         specialty = cursor.getString(cursor.getColumnIndex(LawyersContract.LawyerEntry.SPECIALTY));

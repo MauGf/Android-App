@@ -1,4 +1,4 @@
-package com.maugarciaf.finalprojectbymau.lawyers;
+package com.maugarciaf.finalprojectbymau.doctors;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,10 +15,10 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.maugarciaf.finalprojectbymau.R;
-import com.maugarciaf.finalprojectbymau.addeditlawyer.AddEditLawyerActivity;
+import com.maugarciaf.finalprojectbymau.addeditdoctor.AddEditLawyerActivity;
 import com.maugarciaf.finalprojectbymau.data.LawyersContract;
 import com.maugarciaf.finalprojectbymau.data.LawyersDbHelper;
-import com.maugarciaf.finalprojectbymau.lawyerdetail.LawyerDetailActivity;
+import com.maugarciaf.finalprojectbymau.doctordetail.LawyerDetailActivity;
 
 public class LawyersFragment extends Fragment {
     public static final int REQUEST_UPDATE_DELETE_LAWYER = 2;

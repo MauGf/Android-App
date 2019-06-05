@@ -1,4 +1,4 @@
-package com.maugarciaf.finalprojectbymau.addeditlawyer;
+package com.maugarciaf.finalprojectbymau.addeditdoctor;
 
 import android.app.Activity;
 import android.database.Cursor;
@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.maugarciaf.finalprojectbymau.R;
-import com.maugarciaf.finalprojectbymau.model.Lawyer;
+import com.maugarciaf.finalprojectbymau.model.Doctors;
 import com.maugarciaf.finalprojectbymau.data.LawyersDbHelper;
 
 public class AddEditLawyerFragment extends Fragment {
@@ -137,10 +137,10 @@ public class AddEditLawyerFragment extends Fragment {
             return;
         }
 
-        Lawyer lawyer = new Lawyer (name, specialty, phoneNumber, bio, dir,  mAvatarUri);
+        Doctors doctors = new Doctors (name, specialty, phoneNumber, bio, dir,  mAvatarUri);
 
 
-        new AddEditLawyerTask ().execute (lawyer);
+        new AddEditLawyerTask ().execute (doctors);
 
     }
 
@@ -160,13 +160,13 @@ public class AddEditLawyerFragment extends Fragment {
                 "Error al agregar nueva información", Toast.LENGTH_SHORT).show ();
     }
 
-    private void showLawyer(Lawyer lawyer) {
-        mNameField.setText (lawyer.getName ());
-        mPhoneNumberField.setText (lawyer.getPhoneNumber ());
-        mSpecialtyField.setText (lawyer.getSpecialty ());
-        mBioField.setText (lawyer.getBio ());
-        mAvatarUri = lawyer.getAvatarUri ();
-        mDirField.setText (lawyer.getDirection ());
+    private void showLawyer(Doctors doctors) {
+        mNameField.setText (doctors.getName ());
+        mPhoneNumberField.setText (doctors.getPhoneNumber ());
+        mSpecialtyField.setText (doctors.getSpecialty ());
+        mBioField.setText (doctors.getBio ());
+        mAvatarUri = doctors.getAvatarUri ();
+        mDirField.setText (doctors.getDirection ());
     }
 
     private void showLoadError() {
@@ -184,7 +184,7 @@ public class AddEditLawyerFragment extends Fragment {
         @Override
         protected void onPostExecute(Cursor cursor) {
             if (cursor != null && cursor.moveToLast ()) {
-                showLawyer (new Lawyer (cursor));
+                showLawyer (new Doctors (cursor));
             } else {
                 showLoadError ();
                 getActivity ().setResult (Activity.RESULT_CANCELED);
@@ -194,14 +194,14 @@ public class AddEditLawyerFragment extends Fragment {
 
     }
 
-    private class AddEditLawyerTask extends AsyncTask<Lawyer, Void, Boolean> {
+    private class AddEditLawyerTask extends AsyncTask<Doctors, Void, Boolean> {
 
         @Override
-        protected Boolean doInBackground(Lawyer... lawyers) {
+        protected Boolean doInBackground(Doctors... doctors) {
             if (mLawyerId != null) {
-                return mLawyersDbHelper.updateLawyer (lawyers[0], mLawyerId) > 0;
+                return mLawyersDbHelper.updateLawyer (doctors[0], mLawyerId) > 0;
             } else {
-                return mLawyersDbHelper.saveLawyer (lawyers[0]) > 0;
+                return mLawyersDbHelper.saveLawyer (doctors[0]) > 0;
             }
 
         }

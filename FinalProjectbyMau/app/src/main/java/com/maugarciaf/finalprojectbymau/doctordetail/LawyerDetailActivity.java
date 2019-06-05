@@ -1,17 +1,14 @@
-package com.maugarciaf.finalprojectbymau.lawyerdetail;
+package com.maugarciaf.finalprojectbymau.doctordetail;
 
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.View;
 
 import com.maugarciaf.finalprojectbymau.R;
-import com.maugarciaf.finalprojectbymau.lawyers.LawyersActivity;
+import com.maugarciaf.finalprojectbymau.doctors.LawyersActivity;
 import com.maugarciaf.finalprojectbymau.utils.Tools;
 
 import java.util.Objects;

@@ -1,4 +1,4 @@
-package com.maugarciaf.finalprojectbymau.lawyers;
+package com.maugarciaf.finalprojectbymau.doctors;
 
 import android.content.Context;
 import android.database.Cursor;

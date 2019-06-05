@@ -12,15 +12,15 @@
         <activity android:name=".AboutActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".addeditlawyer.AddEditLawyerActivity"
+            android:name=".addeditdoctor.AddEditLawyerActivity"
             android:label="@string/title_activity_add_edit_lawyer"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".lawyerdetail.LawyerDetailActivity"
+            android:name=".doctordetail.LawyerDetailActivity"
             android:label="@string/title_activity_lawyer_detail"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".lawyers.LawyersActivity"
+            android:name=".doctors.LawyersActivity"
             android:label="@string/activity_listado"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">

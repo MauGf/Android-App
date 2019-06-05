@@ -1,4 +1,4 @@
-package com.maugarciaf.finalprojectbymau.lawyerdetail;
+package com.maugarciaf.finalprojectbymau.doctordetail;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -21,11 +21,11 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.maugarciaf.finalprojectbymau.R;
-import com.maugarciaf.finalprojectbymau.addeditlawyer.AddEditLawyerActivity;
-import com.maugarciaf.finalprojectbymau.model.Lawyer;
+import com.maugarciaf.finalprojectbymau.addeditdoctor.AddEditLawyerActivity;
+import com.maugarciaf.finalprojectbymau.model.Doctors;
 import com.maugarciaf.finalprojectbymau.data.LawyersDbHelper;
-import com.maugarciaf.finalprojectbymau.lawyers.LawyersActivity;
-import com.maugarciaf.finalprojectbymau.lawyers.LawyersFragment;
+import com.maugarciaf.finalprojectbymau.doctors.LawyersActivity;
+import com.maugarciaf.finalprojectbymau.doctors.LawyersFragment;
 
 import java.util.Objects;
 
@@ -116,16 +116,16 @@ public class LawyerDetailFragment extends Fragment {
         }
     }
 
-    private void showLawyer(Lawyer lawyer) {
-        mCollapsingView.setTitle(lawyer.getName());
+    private void showLawyer(Doctors doctors) {
+        mCollapsingView.setTitle(doctors.getName());
         Glide.with(this)
-                .load(Uri.parse("file:///android_asset/" + lawyer.getAvatarUri()))
+                .load(Uri.parse("file:///android_asset/" + doctors.getAvatarUri()))
                 .centerCrop()
                 .into(mAvatar);
-        mPhoneNumber.setText(lawyer.getPhoneNumber());
-        mSpecialty.setText(lawyer.getSpecialty());
-        mBio.setText(lawyer.getBio());
-        mDirection.setText(lawyer.getDirection());
+        mPhoneNumber.setText(doctors.getPhoneNumber());
+        mSpecialty.setText(doctors.getSpecialty());
+        mBio.setText(doctors.getBio());
+        mDirection.setText(doctors.getDirection());
     }
 
     private void showEditScreen() {
@@ -163,7 +163,7 @@ public class LawyerDetailFragment extends Fragment {
         @Override
         protected void onPostExecute(Cursor cursor) {
             if (cursor != null && cursor.moveToLast()) {
-                showLawyer(new Lawyer (cursor));
+                showLawyer(new Doctors (cursor));
             } else {
                 showLoadError();
             }
