@@ -96,7 +96,7 @@ public class AddEditDoctorFragment extends Fragment {
     }
 
     private void loadLawyer() {
-        new GetLawyerByIdTask ().execute ();
+        new GetDoctorByIdTask ().execute ();
     }
 
     private void addEditLawyer() {
@@ -144,7 +144,7 @@ public class AddEditDoctorFragment extends Fragment {
 
     }
 
-    private void showLawyersScreen(Boolean requery) {
+    private void showDoctorsScreen(Boolean requery) {
         if (!requery) {
             showAddEditError ();
             getActivity ().setResult (Activity.RESULT_CANCELED);
@@ -160,7 +160,7 @@ public class AddEditDoctorFragment extends Fragment {
                 "Error al agregar nueva información", Toast.LENGTH_SHORT).show ();
     }
 
-    private void showLawyer(Doctors doctors) {
+    private void showDoctor(Doctors doctors) {
         mNameField.setText (doctors.getName ());
         mPhoneNumberField.setText (doctors.getPhoneNumber ());
         mSpecialtyField.setText (doctors.getSpecialty ());
@@ -174,17 +174,17 @@ public class AddEditDoctorFragment extends Fragment {
                 "Error al editar Doctor", Toast.LENGTH_SHORT).show ();
     }
 
-    private class GetLawyerByIdTask extends AsyncTask<Void, Void, Cursor> {
+    private class GetDoctorByIdTask extends AsyncTask<Void, Void, Cursor> {
 
         @Override
         protected Cursor doInBackground(Void... voids) {
-            return mDoctorsDbHelper.getLawyerById (mDoctorId);
+            return mDoctorsDbHelper.getDoctorById (mDoctorId);
         }
 
         @Override
         protected void onPostExecute(Cursor cursor) {
             if (cursor != null && cursor.moveToLast ()) {
-                showLawyer (new Doctors (cursor));
+                showDoctor (new Doctors (cursor));
             } else {
                 showLoadError ();
                 getActivity ().setResult (Activity.RESULT_CANCELED);
@@ -199,16 +199,16 @@ public class AddEditDoctorFragment extends Fragment {
         @Override
         protected Boolean doInBackground(Doctors... doctors) {
             if (mDoctorId != null) {
-                return mDoctorsDbHelper.updateLawyer (doctors[0], mDoctorId) > 0;
+                return mDoctorsDbHelper.updateDoctor (doctors[0], mDoctorId) > 0;
             } else {
-                return mDoctorsDbHelper.saveLawyer (doctors[0]) > 0;
+                return mDoctorsDbHelper.saveDoctor (doctors[0]) > 0;
             }
 
         }
 
         @Override
         protected void onPostExecute(Boolean result) {
-            showLawyersScreen (result);
+            showDoctorsScreen (result);
         }
 
     }

@@ -21,12 +21,12 @@ import com.maugarciaf.finalprojectbymau.data.DoctorsDbHelper;
 import com.maugarciaf.finalprojectbymau.doctordetail.DoctorDetailActivity;
 
 public class DoctorsFragment extends Fragment {
-    public static final int REQUEST_UPDATE_DELETE_LAWYER = 2;
+    public static final int REQUEST_UPDATE_DELETE_DOCTOR = 2;
 
     private DoctorsDbHelper mDoctorsDbHelper;
 
-    private ListView mLawyersList;
-    private DoctorsCursorAdapter mLawyersAdapter;
+    private ListView mDoctorsList;
+    private DoctorsCursorAdapter mDoctorsAdapter;
     private FloatingActionButton mAddButton;
 
 
@@ -44,20 +44,20 @@ public class DoctorsFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_lawyers, container, false);
 
         // Referencias UI
-        mLawyersList = (ListView) root.findViewById(R.id.lawyers_list);
-        mLawyersAdapter = new DoctorsCursorAdapter (getActivity(), null);
+        mDoctorsList = (ListView) root.findViewById(R.id.lawyers_list);
+        mDoctorsAdapter = new DoctorsCursorAdapter (getActivity(), null);
         mAddButton = (FloatingActionButton) getActivity().findViewById(R.id.fab);
 
         // Setup
-        mLawyersList.setAdapter(mLawyersAdapter);
+        mDoctorsList.setAdapter(mDoctorsAdapter);
 
         // Eventos
-        mLawyersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mDoctorsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Cursor currentItem = (Cursor) mLawyersAdapter.getItem(i);
+                Cursor currentItem = (Cursor) mDoctorsAdapter.getItem(i);
                 String currentLawyerId = currentItem.getString(
-                        currentItem.getColumnIndex(DoctorsContract.LawyerEntry.ID));
+                        currentItem.getColumnIndex(DoctorsContract.DoctorEntry.ID));
 
                 showDetailScreen(currentLawyerId);
             }
@@ -85,11 +85,11 @@ public class DoctorsFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (Activity.RESULT_OK == resultCode) {
             switch (requestCode) {
-                case AddEditDoctorActivity.REQUEST_ADD_LAWYER:
+                case AddEditDoctorActivity.REQUEST_ADD_DOCTOR:
                     showSuccessfullSavedMessage();
                     loadLawyers();
                     break;
-                case REQUEST_UPDATE_DELETE_LAWYER:
+                case REQUEST_UPDATE_DELETE_DOCTOR:
                     Toast.makeText (getActivity (), "Se actualizo la Bd.", Toast.LENGTH_SHORT).show ();
                     loadLawyers();
                     break;
@@ -108,29 +108,29 @@ public class DoctorsFragment extends Fragment {
 
     private void showAddScreen() {
         Intent intent = new Intent(getActivity(), AddEditDoctorActivity.class);
-        startActivityForResult(intent, AddEditDoctorActivity.REQUEST_ADD_LAWYER);
+        startActivityForResult(intent, AddEditDoctorActivity.REQUEST_ADD_DOCTOR);
     }
 
     private void showDetailScreen(String lawyerId) {
         Intent intent = new Intent(getActivity(), DoctorDetailActivity.class);
-        intent.putExtra(DoctorsActivity.EXTRA_LAWYER_ID, lawyerId);
-        startActivityForResult(intent, REQUEST_UPDATE_DELETE_LAWYER);
+        intent.putExtra(DoctorsActivity.EXTRA_DOCTOR_ID, lawyerId);
+        startActivityForResult(intent, REQUEST_UPDATE_DELETE_DOCTOR);
     }
 
     private class LawyersLoadTask extends AsyncTask<Void, Void, Cursor> {
 
         @Override
         protected Cursor doInBackground(Void... voids) {
-            return mDoctorsDbHelper.getAllLawyers();
+            return mDoctorsDbHelper.getAllDoctors();
         }
 
         @Override
         protected void onPostExecute(Cursor cursor) {
             if (cursor != null && cursor.getCount() > 0) {
-                mLawyersAdapter.swapCursor(cursor);
+                mDoctorsAdapter.swapCursor(cursor);
             } else {
                 // Mostrar empty state
-                mLawyersAdapter.swapCursor(null); // SOLUCION
+                mDoctorsAdapter.swapCursor(null); // SOLUCION
             }
         }
     }

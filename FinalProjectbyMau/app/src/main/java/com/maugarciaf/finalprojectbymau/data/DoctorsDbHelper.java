@@ -36,48 +36,48 @@ public class DoctorsDbHelper extends SQLiteOpenHelper {
     }
 
     private void mockData(SQLiteDatabase sqLiteDatabase) {
-        mockLawyer(sqLiteDatabase, new Doctors ("Carlos Perez",
+        mockDoctor(sqLiteDatabase, new Doctors ("Carlos Perez",
                 "Abogado penalista",
                 "300 200 1111",
                 "Gran profesional con experiencia de 5 años en casos penales.",
                 "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.","carlos_perez.jpg"));
-        mockLawyer(sqLiteDatabase, new Doctors ("Daniel Samper",
+        mockDoctor(sqLiteDatabase, new Doctors ("Daniel Samper",
                 "Abogado accidentes de tráfico",
                 "300 200 2222",
                 "Gran profesional con experiencia de 5 años en accidentes de tráfico.",
                 "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
                 "daniel_samper.jpg"));
-        mockLawyer(sqLiteDatabase, new Doctors ("Lucia Aristizabal",
+        mockDoctor(sqLiteDatabase, new Doctors ("Lucia Aristizabal",
                 "Abogado de derechos laborales",
                 "300 200 3333",
                 "Gran profesional con más de 3 años de experiencia en defensa de los trabajadores.",
                 "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
                 "lucia_aristizabal.jpg"));
-        mockLawyer(sqLiteDatabase, new Doctors ("Marina Acosta",
+        mockDoctor(sqLiteDatabase, new Doctors ("Marina Acosta",
                 "Abogado de familia",
                 "300 200 4444",
                 "Gran profesional con experiencia de 5 años en casos de familia.",
                 "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
                 "marina_acosta.jpg"));
-        mockLawyer(sqLiteDatabase, new Doctors ("Olga Ortiz",
+        mockDoctor(sqLiteDatabase, new Doctors ("Olga Ortiz",
                 "Abogado de administración pública",
                 "300 200 5555",
                 "Gran profesional con experiencia de 5 años en casos en expedientes de urbanismo.",
                 "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
                 "olga_ortiz.jpg"));
-        mockLawyer(sqLiteDatabase, new Doctors ("Pamela Briger",
+        mockDoctor(sqLiteDatabase, new Doctors ("Pamela Briger",
                 "Abogado fiscalista",
                 "300 200 6666",
                 "Gran profesional con experiencia de 5 años en casos de derecho financiero",
                 "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
                 "pamela_briger.jpg"));
-        mockLawyer(sqLiteDatabase, new Doctors ("Rodrigo Benavidez",
+        mockDoctor(sqLiteDatabase, new Doctors ("Rodrigo Benavidez",
                 "Abogado Mercantilista",
                 "300 200 1111",
                 "Gran profesional con experiencia de 5 años en redacción de contratos mercantiles",
                 "Avenida Carlos Bonilla #29 ilobasco , Cabañas El Salvador.",
                 "rodrigo_benavidez.jpg"));
-        mockLawyer(sqLiteDatabase, new Doctors ("Tom Bonz",
+        mockDoctor(sqLiteDatabase, new Doctors ("Tom Bonz",
                 "Abogado penalista",
                 "300 200 1111",
                 "Gran profesional con experiencia de 5 años en casos penales.",
@@ -85,7 +85,7 @@ public class DoctorsDbHelper extends SQLiteOpenHelper {
                 "tom_bonz.jpg"));
     }
 
-    public long mockLawyer(SQLiteDatabase db, Doctors doctors) {
+    public long mockDoctor(SQLiteDatabase db, Doctors doctors) {
         return db.insert(
                 DoctorsContract.DoctorEntry.TABLE_NAME,
                 null,
@@ -97,7 +97,7 @@ public class DoctorsDbHelper extends SQLiteOpenHelper {
         // No hay operaciones
     }
 
-    public long saveLawyer(Doctors doctors) {
+    public long saveDoctor(Doctors doctors) {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
 
         return sqLiteDatabase.insert(
@@ -107,7 +107,7 @@ public class DoctorsDbHelper extends SQLiteOpenHelper {
 
     }
 
-    public Cursor getAllLawyers() {
+    public Cursor getAllDoctors() {
         return getReadableDatabase()
                 .query(
                         DoctorsContract.DoctorEntry.TABLE_NAME,
@@ -119,7 +119,7 @@ public class DoctorsDbHelper extends SQLiteOpenHelper {
                         null);
     }
 
-    public Cursor getLawyerById(String lawyerId) {
+    public Cursor getDoctorById(String lawyerId) {
         Cursor c = getReadableDatabase().query(
                 DoctorsContract.DoctorEntry.TABLE_NAME,
                 null,
@@ -131,14 +131,14 @@ public class DoctorsDbHelper extends SQLiteOpenHelper {
         return c;
     }
 
-    public int deleteLawyer(String lawyerId) {
+    public int deleteDoctor(String lawyerId) {
         return getWritableDatabase().delete(
                 DoctorsContract.DoctorEntry.TABLE_NAME,
                 DoctorsContract.DoctorEntry.ID + " LIKE ?",
                 new String[]{lawyerId});
     }
 
-    public int updateLawyer(Doctors doctors, String lawyerId) {
+    public int updateDoctor(Doctors doctors, String lawyerId) {
         return getWritableDatabase().update(
                 DoctorsContract.DoctorEntry.TABLE_NAME,
                 doctors.toContentValues(),
