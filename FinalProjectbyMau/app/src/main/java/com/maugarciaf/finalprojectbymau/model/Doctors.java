@@ -31,25 +31,25 @@ public class Doctors {
     }
 
     public Doctors(Cursor cursor) {
-        id = cursor.getString(cursor.getColumnIndex(DoctorsContract.LawyerEntry.ID));
-        name = cursor.getString(cursor.getColumnIndex(DoctorsContract.LawyerEntry.NAME));
-        specialty = cursor.getString(cursor.getColumnIndex(DoctorsContract.LawyerEntry.SPECIALTY));
-        phoneNumber = cursor.getString(cursor.getColumnIndex(DoctorsContract.LawyerEntry.PHONE_NUMBER));
-        bio = cursor.getString(cursor.getColumnIndex(DoctorsContract.LawyerEntry.BIO));
-        direction = cursor.getString(cursor.getColumnIndex(DoctorsContract.LawyerEntry.DIRECTION));
-        avatarUri = cursor.getString(cursor.getColumnIndex(DoctorsContract.LawyerEntry.AVATAR_URI));
+        id = cursor.getString(cursor.getColumnIndex(DoctorsContract.DoctorEntry.ID));
+        name = cursor.getString(cursor.getColumnIndex(DoctorsContract.DoctorEntry.NAME));
+        specialty = cursor.getString(cursor.getColumnIndex(DoctorsContract.DoctorEntry.SPECIALTY));
+        phoneNumber = cursor.getString(cursor.getColumnIndex(DoctorsContract.DoctorEntry.PHONE_NUMBER));
+        bio = cursor.getString(cursor.getColumnIndex(DoctorsContract.DoctorEntry.BIO));
+        direction = cursor.getString(cursor.getColumnIndex(DoctorsContract.DoctorEntry.DIRECTION));
+        avatarUri = cursor.getString(cursor.getColumnIndex(DoctorsContract.DoctorEntry.AVATAR_URI));
 
     }
 
     public ContentValues toContentValues() {
         ContentValues values = new ContentValues();
-        values.put(DoctorsContract.LawyerEntry.ID, id);
-        values.put(DoctorsContract.LawyerEntry.NAME, name);
-        values.put(DoctorsContract.LawyerEntry.SPECIALTY, specialty);
-        values.put(DoctorsContract.LawyerEntry.PHONE_NUMBER, phoneNumber);
-        values.put(DoctorsContract.LawyerEntry.BIO, bio);
-        values.put(DoctorsContract.LawyerEntry.DIRECTION, direction);
-        values.put(DoctorsContract.LawyerEntry.AVATAR_URI, avatarUri);
+        values.put(DoctorsContract.DoctorEntry.ID, id);
+        values.put(DoctorsContract.DoctorEntry.NAME, name);
+        values.put(DoctorsContract.DoctorEntry.SPECIALTY, specialty);
+        values.put(DoctorsContract.DoctorEntry.PHONE_NUMBER, phoneNumber);
+        values.put(DoctorsContract.DoctorEntry.BIO, bio);
+        values.put(DoctorsContract.DoctorEntry.DIRECTION, direction);
+        values.put(DoctorsContract.DoctorEntry.AVATAR_URI, avatarUri);
 
         return values;
     }
