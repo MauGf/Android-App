@@ -37,8 +37,8 @@ public class DoctorsCursorAdapter extends CursorAdapter {
         final ImageView avatarImage = (ImageView) view.findViewById (R.id.iv_avatar);
 
         // Get valores.
-        String name = cursor.getString (cursor.getColumnIndex (DoctorsContract.LawyerEntry.NAME));
-        String avatarUri = cursor.getString (cursor.getColumnIndex (DoctorsContract.LawyerEntry.AVATAR_URI));
+        String name = cursor.getString (cursor.getColumnIndex (DoctorsContract.DoctorEntry.NAME));
+        String avatarUri = cursor.getString (cursor.getColumnIndex (DoctorsContract.DoctorEntry.AVATAR_URI));
 
         // Setup.
         nameText.setText (name);
