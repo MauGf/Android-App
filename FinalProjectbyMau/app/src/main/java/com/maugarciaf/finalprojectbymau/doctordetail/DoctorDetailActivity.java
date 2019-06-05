@@ -26,7 +26,7 @@ public class DoctorDetailActivity extends AppCompatActivity {
 
         Tools.setSystemBarTransparent (this);
 
-        String id = getIntent().getStringExtra(DoctorsActivity.EXTRA_LAWYER_ID);
+        String id = getIntent().getStringExtra(DoctorsActivity.EXTRA_DOCTOR_ID);
 
         DoctorDetailFragment fragment = (DoctorDetailFragment)
                 getSupportFragmentManager().findFragmentById(R.id.lawyer_detail_container);

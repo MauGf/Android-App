@@ -30,7 +30,7 @@ import com.maugarciaf.finalprojectbymau.doctors.DoctorsFragment;
 import java.util.Objects;
 
 public class DoctorDetailFragment extends Fragment {
-    private static final String ARG_LAWYER_ID = "lawyerId";
+    private static final String ARG_DOCTOR_ID = "lawyerId";
 
     private String mLawyerId;
 
@@ -52,7 +52,7 @@ public class DoctorDetailFragment extends Fragment {
     public static DoctorDetailFragment newInstance(String lawyerId) {
         DoctorDetailFragment fragment = new DoctorDetailFragment ();
         Bundle args = new Bundle();
-        args.putString(ARG_LAWYER_ID, lawyerId);
+        args.putString(ARG_DOCTOR_ID, lawyerId);
         fragment.setArguments(args);
         return fragment;
     }
@@ -62,7 +62,7 @@ public class DoctorDetailFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            mLawyerId = getArguments().getString(ARG_LAWYER_ID);
+            mLawyerId = getArguments().getString(ARG_DOCTOR_ID);
         }
 
         setHasOptionsMenu(true);
@@ -130,7 +130,7 @@ public class DoctorDetailFragment extends Fragment {
 
     private void showEditScreen() {
         Intent intent = new Intent (getActivity(), AddEditDoctorActivity.class);
-        intent.putExtra(DoctorsActivity.EXTRA_LAWYER_ID, mLawyerId);
+        intent.putExtra(DoctorsActivity.EXTRA_DOCTOR_ID, mLawyerId);
         startActivityForResult(intent, DoctorsFragment.REQUEST_UPDATE_DELETE_LAWYER);
     }
 
