@@ -2,9 +2,9 @@ package com.maugarciaf.finalprojectbymau.data;
 
 import android.provider.BaseColumns;
 
-public class LawyersContract {
+public class DoctorsContract {
 
-    public static abstract class LawyerEntry implements BaseColumns {
+    public static abstract class DoctorEntry implements BaseColumns {
         public static final String TABLE_NAME ="lawyer";
 
         public static final String ID = "id";

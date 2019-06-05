@@ -13,7 +13,7 @@ import com.maugarciaf.finalprojectbymau.utils.Tools;
 
 import java.util.Objects;
 
-public class LawyerDetailActivity extends AppCompatActivity {
+public class DoctorDetailActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -28,10 +28,10 @@ public class LawyerDetailActivity extends AppCompatActivity {
 
         String id = getIntent().getStringExtra(LawyersActivity.EXTRA_LAWYER_ID);
 
-        LawyerDetailFragment fragment = (LawyerDetailFragment)
+        DoctorDetailFragment fragment = (DoctorDetailFragment)
                 getSupportFragmentManager().findFragmentById(R.id.lawyer_detail_container);
         if (fragment == null) {
-            fragment = LawyerDetailFragment.newInstance(id);
+            fragment = DoctorDetailFragment.newInstance(id);
             getSupportFragmentManager()
                     .beginTransaction()
                     .add(R.id.lawyer_detail_container, fragment)

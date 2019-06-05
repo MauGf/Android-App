@@ -22,14 +22,14 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.maugarciaf.finalprojectbymau.R;
 import com.maugarciaf.finalprojectbymau.addeditdoctor.AddEditDoctorActivity;
+import com.maugarciaf.finalprojectbymau.data.DoctorsDbHelper;
 import com.maugarciaf.finalprojectbymau.model.Doctors;
-import com.maugarciaf.finalprojectbymau.data.LawyersDbHelper;
 import com.maugarciaf.finalprojectbymau.doctors.LawyersActivity;
 import com.maugarciaf.finalprojectbymau.doctors.LawyersFragment;
 
 import java.util.Objects;
 
-public class LawyerDetailFragment extends Fragment {
+public class DoctorDetailFragment extends Fragment {
     private static final String ARG_LAWYER_ID = "lawyerId";
 
     private String mLawyerId;
@@ -42,15 +42,15 @@ public class LawyerDetailFragment extends Fragment {
     private TextView mDirection;
 
 
-    private LawyersDbHelper mLawyersDbHelper;
+    private DoctorsDbHelper mDoctorsDbHelper;
 
 
-    public LawyerDetailFragment() {
+    public DoctorDetailFragment() {
         // Required empty public constructor
     }
 
-    public static LawyerDetailFragment newInstance(String lawyerId) {
-        LawyerDetailFragment fragment = new LawyerDetailFragment();
+    public static DoctorDetailFragment newInstance(String lawyerId) {
+        DoctorDetailFragment fragment = new DoctorDetailFragment ();
         Bundle args = new Bundle();
         args.putString(ARG_LAWYER_ID, lawyerId);
         fragment.setArguments(args);
@@ -80,7 +80,7 @@ public class LawyerDetailFragment extends Fragment {
         mBio = (TextView) root.findViewById(R.id.tv_bio);
         mDirection = (TextView) root.findViewById (R.id.tv_direction) ;
 
-        mLawyersDbHelper = new LawyersDbHelper(getActivity());
+        mDoctorsDbHelper = new DoctorsDbHelper (getActivity());
 
         loadLawyer();
 
@@ -157,7 +157,7 @@ public class LawyerDetailFragment extends Fragment {
 
         @Override
         protected Cursor doInBackground(Void... voids) {
-            return mLawyersDbHelper.getLawyerById(mLawyerId);
+            return mDoctorsDbHelper.getLawyerById(mLawyerId);
         }
 
         @Override
@@ -176,7 +176,7 @@ public class LawyerDetailFragment extends Fragment {
         @Override
         protected Integer doInBackground(Void... voids) {
 
-            return mLawyersDbHelper.deleteLawyer(mLawyerId);
+            return mDoctorsDbHelper.deleteLawyer(mLawyerId);
         }
 
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)

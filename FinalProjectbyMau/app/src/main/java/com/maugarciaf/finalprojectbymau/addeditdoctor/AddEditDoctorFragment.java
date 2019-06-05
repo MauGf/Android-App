@@ -16,15 +16,15 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.maugarciaf.finalprojectbymau.R;
+import com.maugarciaf.finalprojectbymau.data.DoctorsDbHelper;
 import com.maugarciaf.finalprojectbymau.model.Doctors;
-import com.maugarciaf.finalprojectbymau.data.LawyersDbHelper;
 
 public class AddEditDoctorFragment extends Fragment {
     private static final String ARG_LAWYER_ID = "arg_lawyer_id";
     private String mAvatarUri;
     private String mLawyerId;
 
-    private LawyersDbHelper mLawyersDbHelper;
+    private DoctorsDbHelper mDoctorsDbHelper;
 
     private FloatingActionButton mSaveButton;
     private TextInputEditText mNameField;
@@ -85,7 +85,7 @@ public class AddEditDoctorFragment extends Fragment {
             }
         });
 
-        mLawyersDbHelper = new LawyersDbHelper (getActivity ());
+        mDoctorsDbHelper = new DoctorsDbHelper (getActivity ());
 
         // Carga de datos
         if (mLawyerId != null) {
@@ -178,7 +178,7 @@ public class AddEditDoctorFragment extends Fragment {
 
         @Override
         protected Cursor doInBackground(Void... voids) {
-            return mLawyersDbHelper.getLawyerById (mLawyerId);
+            return mDoctorsDbHelper.getLawyerById (mLawyerId);
         }
 
         @Override
@@ -199,9 +199,9 @@ public class AddEditDoctorFragment extends Fragment {
         @Override
         protected Boolean doInBackground(Doctors... doctors) {
             if (mLawyerId != null) {
-                return mLawyersDbHelper.updateLawyer (doctors[0], mLawyerId) > 0;
+                return mDoctorsDbHelper.updateLawyer (doctors[0], mLawyerId) > 0;
             } else {
-                return mLawyersDbHelper.saveLawyer (doctors[0]) > 0;
+                return mDoctorsDbHelper.saveLawyer (doctors[0]) > 0;
             }
 
         }

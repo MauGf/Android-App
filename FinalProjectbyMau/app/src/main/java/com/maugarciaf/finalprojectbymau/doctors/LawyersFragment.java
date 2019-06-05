@@ -15,15 +15,15 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.maugarciaf.finalprojectbymau.R;
-import com.maugarciaf.finalprojectbymau.addeditdoctor.AddEditLawyerActivity;
-import com.maugarciaf.finalprojectbymau.data.LawyersContract;
-import com.maugarciaf.finalprojectbymau.data.LawyersDbHelper;
-import com.maugarciaf.finalprojectbymau.doctordetail.LawyerDetailActivity;
+import com.maugarciaf.finalprojectbymau.addeditdoctor.AddEditDoctorActivity;
+import com.maugarciaf.finalprojectbymau.data.DoctorsContract;
+import com.maugarciaf.finalprojectbymau.data.DoctorsDbHelper;
+import com.maugarciaf.finalprojectbymau.doctordetail.DoctorDetailActivity;
 
 public class LawyersFragment extends Fragment {
     public static final int REQUEST_UPDATE_DELETE_LAWYER = 2;
 
-    private LawyersDbHelper mLawyersDbHelper;
+    private DoctorsDbHelper mDoctorsDbHelper;
 
     private ListView mLawyersList;
     private LawyersCursorAdapter mLawyersAdapter;
@@ -57,7 +57,7 @@ public class LawyersFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Cursor currentItem = (Cursor) mLawyersAdapter.getItem(i);
                 String currentLawyerId = currentItem.getString(
-                        currentItem.getColumnIndex(LawyersContract.LawyerEntry.ID));
+                        currentItem.getColumnIndex(DoctorsContract.LawyerEntry.ID));
 
                 showDetailScreen(currentLawyerId);
             }
@@ -70,10 +70,10 @@ public class LawyersFragment extends Fragment {
         });
 
 
-        // getActivity().deleteDatabase(LawyersDbHelper.DATABASE_NAME);
+        // getActivity().deleteDatabase(DoctorsDbHelper.DATABASE_NAME);
 
         // Instancia de helper
-        mLawyersDbHelper = new LawyersDbHelper(getActivity());
+        mDoctorsDbHelper = new DoctorsDbHelper (getActivity());
 
         // Carga de datos
         loadLawyers();
@@ -85,7 +85,7 @@ public class LawyersFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (Activity.RESULT_OK == resultCode) {
             switch (requestCode) {
-                case AddEditLawyerActivity.REQUEST_ADD_LAWYER:
+                case AddEditDoctorActivity.REQUEST_ADD_LAWYER:
                     showSuccessfullSavedMessage();
                     loadLawyers();
                     break;
@@ -107,12 +107,12 @@ public class LawyersFragment extends Fragment {
     }
 
     private void showAddScreen() {
-        Intent intent = new Intent(getActivity(), AddEditLawyerActivity.class);
-        startActivityForResult(intent, AddEditLawyerActivity.REQUEST_ADD_LAWYER);
+        Intent intent = new Intent(getActivity(), AddEditDoctorActivity.class);
+        startActivityForResult(intent, AddEditDoctorActivity.REQUEST_ADD_LAWYER);
     }
 
     private void showDetailScreen(String lawyerId) {
-        Intent intent = new Intent(getActivity(), LawyerDetailActivity.class);
+        Intent intent = new Intent(getActivity(), DoctorDetailActivity.class);
         intent.putExtra(LawyersActivity.EXTRA_LAWYER_ID, lawyerId);
         startActivityForResult(intent, REQUEST_UPDATE_DELETE_LAWYER);
     }
@@ -121,7 +121,7 @@ public class LawyersFragment extends Fragment {
 
         @Override
         protected Cursor doInBackground(Void... voids) {
-            return mLawyersDbHelper.getAllLawyers();
+            return mDoctorsDbHelper.getAllLawyers();
         }
 
         @Override

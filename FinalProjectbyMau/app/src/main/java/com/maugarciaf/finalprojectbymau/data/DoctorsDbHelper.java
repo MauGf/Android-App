@@ -7,26 +7,26 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.maugarciaf.finalprojectbymau.model.Doctors;
 
-public class LawyersDbHelper extends SQLiteOpenHelper {
+public class DoctorsDbHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "Lawyers.db";
 
-    public LawyersDbHelper(Context context) {
+    public DoctorsDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + LawyersContract.LawyerEntry.TABLE_NAME + " ("
-                + LawyersContract.LawyerEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + LawyersContract.LawyerEntry.ID + " TEXT NOT NULL,"
-                + LawyersContract.LawyerEntry.NAME + " TEXT NOT NULL,"
-                + LawyersContract.LawyerEntry.SPECIALTY + " TEXT NOT NULL,"
-                + LawyersContract.LawyerEntry.PHONE_NUMBER + " TEXT NOT NULL,"
-                + LawyersContract.LawyerEntry.BIO + " TEXT NOT NULL,"
-                + LawyersContract.LawyerEntry.DIRECTION + " TEXT NOT NULL,"
-                + LawyersContract.LawyerEntry.AVATAR_URI + " TEXT,"
-                + "UNIQUE (" + LawyersContract.LawyerEntry.ID + "))");
+        db.execSQL("CREATE TABLE " + DoctorsContract.DoctorEntry.TABLE_NAME + " ("
+                + DoctorsContract.DoctorEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + DoctorsContract.DoctorEntry.ID + " TEXT NOT NULL,"
+                + DoctorsContract.DoctorEntry.NAME + " TEXT NOT NULL,"
+                + DoctorsContract.DoctorEntry.SPECIALTY + " TEXT NOT NULL,"
+                + DoctorsContract.DoctorEntry.PHONE_NUMBER + " TEXT NOT NULL,"
+                + DoctorsContract.DoctorEntry.BIO + " TEXT NOT NULL,"
+                + DoctorsContract.DoctorEntry.DIRECTION + " TEXT NOT NULL,"
+                + DoctorsContract.DoctorEntry.AVATAR_URI + " TEXT,"
+                + "UNIQUE (" + DoctorsContract.DoctorEntry.ID + "))");
 
 
 
@@ -87,7 +87,7 @@ public class LawyersDbHelper extends SQLiteOpenHelper {
 
     public long mockLawyer(SQLiteDatabase db, Doctors doctors) {
         return db.insert(
-                LawyersContract.LawyerEntry.TABLE_NAME,
+                DoctorsContract.DoctorEntry.TABLE_NAME,
                 null,
                 doctors.toContentValues());
     }
@@ -101,7 +101,7 @@ public class LawyersDbHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
 
         return sqLiteDatabase.insert(
-                LawyersContract.LawyerEntry.TABLE_NAME,
+                DoctorsContract.DoctorEntry.TABLE_NAME,
                 null,
                 doctors.toContentValues());
 
@@ -110,7 +110,7 @@ public class LawyersDbHelper extends SQLiteOpenHelper {
     public Cursor getAllLawyers() {
         return getReadableDatabase()
                 .query(
-                        LawyersContract.LawyerEntry.TABLE_NAME,
+                        DoctorsContract.DoctorEntry.TABLE_NAME,
                         null,
                         null,
                         null,
@@ -121,9 +121,9 @@ public class LawyersDbHelper extends SQLiteOpenHelper {
 
     public Cursor getLawyerById(String lawyerId) {
         Cursor c = getReadableDatabase().query(
-                LawyersContract.LawyerEntry.TABLE_NAME,
+                DoctorsContract.DoctorEntry.TABLE_NAME,
                 null,
-                LawyersContract.LawyerEntry.ID + " LIKE ?",
+                DoctorsContract.DoctorEntry.ID + " LIKE ?",
                 new String[]{lawyerId},
                 null,
                 null,
@@ -133,16 +133,16 @@ public class LawyersDbHelper extends SQLiteOpenHelper {
 
     public int deleteLawyer(String lawyerId) {
         return getWritableDatabase().delete(
-                LawyersContract.LawyerEntry.TABLE_NAME,
-                LawyersContract.LawyerEntry.ID + " LIKE ?",
+                DoctorsContract.DoctorEntry.TABLE_NAME,
+                DoctorsContract.DoctorEntry.ID + " LIKE ?",
                 new String[]{lawyerId});
     }
 
     public int updateLawyer(Doctors doctors, String lawyerId) {
         return getWritableDatabase().update(
-                LawyersContract.LawyerEntry.TABLE_NAME,
+                DoctorsContract.DoctorEntry.TABLE_NAME,
                 doctors.toContentValues(),
-                LawyersContract.LawyerEntry.ID + " LIKE ?",
+                DoctorsContract.DoctorEntry.ID + " LIKE ?",
                 new String[]{lawyerId}
         );
     }
