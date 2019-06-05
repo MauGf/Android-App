@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.maugarciaf.finalprojectbymau.R;
-import com.maugarciaf.finalprojectbymau.data.LawyersContract;
+import com.maugarciaf.finalprojectbymau.data.DoctorsContract;
 
 public class LawyersCursorAdapter extends CursorAdapter {
     public LawyersCursorAdapter(Context context, Cursor c) {
@@ -37,8 +37,8 @@ public class LawyersCursorAdapter extends CursorAdapter {
         final ImageView avatarImage = (ImageView) view.findViewById (R.id.iv_avatar);
 
         // Get valores.
-        String name = cursor.getString (cursor.getColumnIndex (LawyersContract.LawyerEntry.NAME));
-        String avatarUri = cursor.getString (cursor.getColumnIndex (LawyersContract.LawyerEntry.AVATAR_URI));
+        String name = cursor.getString (cursor.getColumnIndex (DoctorsContract.LawyerEntry.NAME));
+        String avatarUri = cursor.getString (cursor.getColumnIndex (DoctorsContract.LawyerEntry.AVATAR_URI));
 
         // Setup.
         nameText.setText (name);
