@@ -11,7 +11,7 @@ import com.maugarciaf.finalprojectbymau.doctors.LawyersActivity;
 
 import java.util.Objects;
 
-public class AddEditLawyerActivity extends AppCompatActivity {
+public class AddEditDoctorActivity extends AppCompatActivity {
 
     public static final int REQUEST_ADD_LAWYER = 1;
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -27,13 +27,13 @@ public class AddEditLawyerActivity extends AppCompatActivity {
 
         setTitle(lawyerId == null ? "Añadir Doctor" : "Editar Doctor");
 
-        AddEditLawyerFragment addEditLawyerFragment = (AddEditLawyerFragment)
+        AddEditDoctorFragment addEditDoctorFragment = (AddEditDoctorFragment)
                 getSupportFragmentManager().findFragmentById(R.id.add_edit_lawyer_container);
-        if (addEditLawyerFragment == null) {
-            addEditLawyerFragment = AddEditLawyerFragment.newInstance(lawyerId);
+        if (addEditDoctorFragment == null) {
+            addEditDoctorFragment = AddEditDoctorFragment.newInstance(lawyerId);
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.add_edit_lawyer_container, addEditLawyerFragment)
+                    .add(R.id.add_edit_lawyer_container, addEditDoctorFragment)
                     .commit();
         }
     }
