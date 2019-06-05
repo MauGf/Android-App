@@ -3,7 +3,7 @@ package com.maugarciaf.finalprojectbymau.model;
 import android.content.ContentValues;
 import android.database.Cursor;
 
-import com.maugarciaf.finalprojectbymau.data.LawyersContract;
+import com.maugarciaf.finalprojectbymau.data.DoctorsContract;
 
 import java.util.UUID;
 
@@ -31,25 +31,25 @@ public class Doctors {
     }
 
     public Doctors(Cursor cursor) {
-        id = cursor.getString(cursor.getColumnIndex(LawyersContract.LawyerEntry.ID));
-        name = cursor.getString(cursor.getColumnIndex(LawyersContract.LawyerEntry.NAME));
-        specialty = cursor.getString(cursor.getColumnIndex(LawyersContract.LawyerEntry.SPECIALTY));
-        phoneNumber = cursor.getString(cursor.getColumnIndex(LawyersContract.LawyerEntry.PHONE_NUMBER));
-        bio = cursor.getString(cursor.getColumnIndex(LawyersContract.LawyerEntry.BIO));
-        direction = cursor.getString(cursor.getColumnIndex(LawyersContract.LawyerEntry.DIRECTION));
-        avatarUri = cursor.getString(cursor.getColumnIndex(LawyersContract.LawyerEntry.AVATAR_URI));
+        id = cursor.getString(cursor.getColumnIndex(DoctorsContract.LawyerEntry.ID));
+        name = cursor.getString(cursor.getColumnIndex(DoctorsContract.LawyerEntry.NAME));
+        specialty = cursor.getString(cursor.getColumnIndex(DoctorsContract.LawyerEntry.SPECIALTY));
+        phoneNumber = cursor.getString(cursor.getColumnIndex(DoctorsContract.LawyerEntry.PHONE_NUMBER));
+        bio = cursor.getString(cursor.getColumnIndex(DoctorsContract.LawyerEntry.BIO));
+        direction = cursor.getString(cursor.getColumnIndex(DoctorsContract.LawyerEntry.DIRECTION));
+        avatarUri = cursor.getString(cursor.getColumnIndex(DoctorsContract.LawyerEntry.AVATAR_URI));
 
     }
 
     public ContentValues toContentValues() {
         ContentValues values = new ContentValues();
-        values.put(LawyersContract.LawyerEntry.ID, id);
-        values.put(LawyersContract.LawyerEntry.NAME, name);
-        values.put(LawyersContract.LawyerEntry.SPECIALTY, specialty);
-        values.put(LawyersContract.LawyerEntry.PHONE_NUMBER, phoneNumber);
-        values.put(LawyersContract.LawyerEntry.BIO, bio);
-        values.put(LawyersContract.LawyerEntry.DIRECTION, direction);
-        values.put(LawyersContract.LawyerEntry.AVATAR_URI, avatarUri);
+        values.put(DoctorsContract.LawyerEntry.ID, id);
+        values.put(DoctorsContract.LawyerEntry.NAME, name);
+        values.put(DoctorsContract.LawyerEntry.SPECIALTY, specialty);
+        values.put(DoctorsContract.LawyerEntry.PHONE_NUMBER, phoneNumber);
+        values.put(DoctorsContract.LawyerEntry.BIO, bio);
+        values.put(DoctorsContract.LawyerEntry.DIRECTION, direction);
+        values.put(DoctorsContract.LawyerEntry.AVATAR_URI, avatarUri);
 
         return values;
     }
