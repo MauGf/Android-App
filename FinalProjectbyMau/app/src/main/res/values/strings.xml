@@ -58,5 +58,9 @@
     <string name="error_add_info">Error al agregar nueva información</string>
     <string name="error_edit_doc">Error al editar Doctor</string>
     <string name="doctor_deleted">Se borro un Doctor</string>
+    <string name="edit_nombre">Nombre</string>
+    <string name="edit_tel_fono">Número de teléfono</string>
+    <string name="edit_especialidad">Especialidad</string>
+    <string name="edit_biografia">Biografía</string>
 
 </resources>
