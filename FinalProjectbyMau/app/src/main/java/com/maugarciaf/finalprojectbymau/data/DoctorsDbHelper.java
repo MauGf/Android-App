@@ -30,7 +30,7 @@ public class DoctorsDbHelper extends SQLiteOpenHelper {
 
 
 
-        // Insertar datos ficticios para prueba inicial
+        // Insertar datos ficticios de doctores para prueba inicial en la app
         mockData(db);
 
     }
