@@ -130,7 +130,7 @@ public class DoctorsFragment extends Fragment {
                 mDoctorsAdapter.swapCursor(cursor);
             } else {
                 // Mostrar empty state
-                mDoctorsAdapter.swapCursor(null); // SOLUCION
+                mDoctorsAdapter.swapCursor(null); 
             }
         }
     }
