@@ -100,7 +100,7 @@ public class DoctorDetailFragment extends Fragment {
             case R.id.action_delete:
                 new DeleteDoctorTask().execute();
                 Toast.makeText(getActivity(),
-                        getResources ().getString(R.string.doctor_deleted), Toast.LENGTH_SHORT).show();
+                        getResources ().getString(R.string.doctor_deleted), Toast.LENGTH_SHORT).show();//borrar doctor
                 break;
         }
         return super.onOptionsItemSelected(item);
