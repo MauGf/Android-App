@@ -50,6 +50,7 @@ public class DatabaseHelperUser extends SQLiteOpenHelper {
 
         //Drop User Table if exist
         db.execSQL (DROP_USER_TABLE);
+        // create user sql query
         db.execSQL ("INSERT INTO " + TABLE_USER + " VALUES (01, 'Mauricio G','mauri@mail.com','2906662015')");
 
         // Create tables again
