@@ -3,8 +3,6 @@
 
     <string name="action_settings">Configuraciones</string>
     <string name="ingresar_usuario">Ingrese su Usuario</string>
-    <string name="usuario_vacio">Ingrese su Usuario</string>
-    <string name="ingresar_clave">Ingrese su Clave...</string>
     <string name="clave_vacia">Ingrese su Clave</string>
     <string name="login">Login</string>
     <string name="desarrollador">Mauricio Alcides Garcia\nCarnet: 2906662015</string>
@@ -14,9 +12,8 @@
     <string name="boton_ingresar">INGRESAR</string>
     <string name="boton_salir">SALIR</string>
 
-    <string name="error_message_name">Enter Full Name</string>
+
     <string name="error_message_email">Ingrese Usuario</string>
-    <string name="error_message_age">Enter Age</string>
     <string name="error_message_password">Ingrese Password</string>
     <string name="error_valid_email_password">Nombre o password incorrectos</string>
     <string name="title_activity_lawyers">Doctor Activity</string>
