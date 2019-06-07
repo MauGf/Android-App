@@ -29,7 +29,7 @@ public class AboutActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Objects.requireNonNull (getSupportActionBar ()).setTitle("Acerca de");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //Tools.setSystemBarTransparent (this);
+    
     }
 
 
