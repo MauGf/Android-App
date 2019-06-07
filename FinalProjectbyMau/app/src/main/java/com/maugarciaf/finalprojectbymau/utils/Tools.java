@@ -7,7 +7,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 public class Tools {
-
+    //action bar semitransparente para versiones lollipop
     public static void setSystemBarTransparent(Activity act) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = act.getWindow();
