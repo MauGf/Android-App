@@ -15,7 +15,7 @@
 
     <string name="error_message_email">Ingrese Usuario</string>
     <string name="error_message_password">Ingrese Password</string>
-    <string name="error_valid_email_password">Nombre o password incorrectos</string>
+    <string name="error_valid_email_password">Usuario o password incorrectos</string>
     <string name="title_activity_lawyers">Doctor Activity</string>
     <string name="activity_listado">Doctores</string>
     <string name="title_activity_lawyer_detail">Docotor Detail Activity</string>
