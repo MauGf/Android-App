@@ -11,7 +11,7 @@ import com.maugarciaf.finalprojectbymau.AboutActivity;
 import com.maugarciaf.finalprojectbymau.R;
 
 public class DoctorsActivity extends AppCompatActivity {
-    public static final String EXTRA_DOCTOR_ID = "extra_lawyer_id";
+    public static final String EXTRA_DOCTOR_ID = "extra_doctor_id";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
