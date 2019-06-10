@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
             Intent accountsIntent = new Intent (activity, DoctorsActivity.class);
-            accountsIntent.putExtra ("EMAIL", textInputEditTextName.getText ().toString ().trim ());
+           // accountsIntent.putExtra ("Manager", textInputEditTextName.getText ().toString ().trim ());
             emptyInputEditText ();
             startActivity (accountsIntent);
 
