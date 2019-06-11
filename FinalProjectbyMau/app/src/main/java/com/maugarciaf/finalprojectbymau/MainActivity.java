@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         } else {
-            // Snack Bar to show success message that record is wrong
+            // Snack Bar que muestra si las credenciales son incorrectas
             Snackbar.make (nestedScrollView, getString (R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show ();
         }
     }
