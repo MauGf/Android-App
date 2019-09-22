@@ -1,2 +1,3 @@
 # Android-App-
-Android app, final project of my school.
+Android application, final semester project in my school. Data persistence is addressed with SQLite
+
